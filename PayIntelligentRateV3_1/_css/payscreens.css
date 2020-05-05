@@ -1,0 +1,707 @@
+#billingInformationSection{
+  border-top:1px dotted #ccc;
+  margin:10px 0 10px 0;
+  padding-top:20px;
+  position:relative;
+}
+#billingInformationSection ul,#shippingInformationSection ul{
+  float:right;
+  margin-right:10px;
+  width:66%;
+}
+#chargeModelSection #vff .buttons h1{
+  background-color:#F2F2F2;
+  border-radius:5px;
+  display:block;
+  font-size:12px;
+  padding:5px;
+}
+#chargeModelSection .titleWrapper{
+  display:inline-block;
+}
+#content{
+  -moz-box-shadow:0px 2px 10px #8a9484;
+  -webkit-box-shadow:0px 2px 10px #8a9484;
+  background-color:#FFF;
+  box-shadow:0px 2px 10px #8a9484;
+  color:#444;
+  margin:20px auto;
+  max-width:650px;
+  position:relative;
+  width:100%;
+}
+#customizableTopSection{
+  padding:5px;
+  text-align:center;
+}
+#disclaimer{
+  color:#999;
+  font-size:11px;
+  line-height:16px;
+  margin:0 auto;
+  max-width:650px;
+  padding:0px 10px 40px 10px;
+  text-align:justify;
+}
+#disclaimer a:link,#disclaimer a:visited{
+  color:#333;
+  text-decoration:underline;
+}
+#errorSection h1{
+  color:#F00;
+  display:block;
+}
+#extended_cost_total_row,#tax_total_row,#grand_total_row{
+  display:table;
+  width:100%;
+}
+#formContainer{
+  padding:15px;
+}
+#generateSeqrCodeButton{
+  margin-left:0px;
+}
+#payMethod span{
+  display:inline-block;
+  font-size:14px;
+  font-weight:bold;
+  padding-bottom:5px;
+  width:100%;
+}
+#paymentInformationSection{
+  border-top:1px dotted #ccc;
+  margin:10px 0 10px 0;
+  padding-top:20px;
+  position:relative;
+}
+#paymentInformationSection ul{
+  float:right;
+  margin-right:10px;
+  width:66%;
+}
+#pt_billing_city,#pt_shipping_city{
+  float:left;
+  width:49%;
+}
+#pt_billing_country select,#pt_billing_state select,#pt_shipping_country select,#pt_shipping_state select{
+  width:100%;
+}
+#pt_billing_country,#pt_shipping_country{
+  float:right;
+  width:49%;
+}
+#pt_billing_postal_code,#pt_shipping_postal_code{
+  float:left;
+  width:49%;
+}
+#pt_billing_state,#pt_shipping_state{
+  float:right;
+  width:49%;
+}
+#pt_card_expiration_month{
+  float:left;
+  margin-right:5px;
+  width:28%;
+}
+#pt_card_expiration_month select{
+  width:100%;
+}
+#pt_card_expiration_year{
+  float:left;
+  margin-left:3px;
+  margin-right:0px;
+  width:18%;
+}
+#pt_card_expiration_year select{
+  width:100%;
+}
+#pt_card_security_code{
+  background:url(/_img/pay/default/cards.png)no-repeat 110px -90px;
+  float:right;
+  width:49%;
+}
+#pt_card_security_code input{
+  width:49%;
+}
+#pt_creditradio .label,#pt_achradio .label,#pt_seqrRadio .label{
+  font-size:13px;
+}
+#pt_payment_first_name{
+  float:left;
+  width:49%;
+}
+#pt_payment_last_name{
+  float:right;
+  width:49%;
+}
+#pt_transaction_amount{
+  border:1px solid #dedede;
+  height:30px;
+  padding:1px;
+  padding-left:10px;
+  padding-top:5px;
+  position:relative;
+}
+#pt_transaction_amount .input{
+  padding:0px;
+}
+#pt_transaction_amount .label{
+  font-size:14px;
+  font-weight:bold;
+  padding:0 0 0 3px;
+}
+#pt_transaction_amount input{
+  font-weight:bold;
+  height:26px;
+  padding-right:10px;
+  position:absolute;
+  right:1px;
+  text-align:left;
+  top:1px;
+  width:30%;
+}
+#seqrCode{
+  overflow:hidden;
+}
+#shoppingCart{
+  border:1px solid #dedede;
+  border-bottom:none;
+  position:relative;
+  width:100%;
+}
+#submitButton,.submitButton{
+  -moz-border-radius:15px;
+  -moz-box-shadow:0px 1px 2px #ccc;
+  -webkit-border-radius:15px;
+  -webkit-box-shadow:0px 1px 2px #ccc;
+  background:-webkit-linear-gradient(top,#ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%);
+  background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#ffffff),color-stop(50%,#f3f3f3),color-stop(51%,#ededed),color-stop(100%,#ffffff));
+  background:-o-linear-gradient(top,#ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%);
+  background:-moz-linear-gradient(top,#ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%);
+  background:#ffffff;
+  background:linear-gradient(to bottom,#ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%);
+  background:-ms-linear-gradient(top,#ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%);
+  background-color:#f5f5f5;
+  border:1px solid #999;
+  border-radius:15px;
+  box-shadow:0px 1px 2px #ccc;
+  cursor:pointer;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#ffffff',GradientType=0 );
+  font-size:13px;
+  margin:25px 0px 25px 200px;
+  padding:5px 10px;
+  text-shadow:0px 1px 0px #fff;
+  width:200px;
+}
+#submitButton:active,.submitButton:active{
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  background-color:#fff;
+  box-shadow:none;
+}
+#submitButton:hover,.submitButton:hover{
+  color:#666;
+}
+#totalWithCoa{
+  border:1px solid #dedede;
+  height:30px;
+  padding:1px;
+  padding-left:10px;
+  padding-top:6px;
+  position:relative;
+}
+#totalWithCoa .input{
+  padding:0px;
+}
+#totalWithCoa .label{
+  font-size:14px;
+  font-weight:bold;
+  padding:0 0 0 3px;
+}
+#totalWithCoa input{
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  background-color:#f2f2f2;
+  border:none;
+  box-shadow:none;
+  font-size:13px;
+  font-weight:bold;
+  height:26px;
+  height:auto;
+  padding:5px;
+  padding-right:10px;
+  position:absolute;
+  right:1px;
+  text-align:left;
+  top:1px;
+  width:30%;
+}
+#vff .buttons .button,#vff .buttons > h1 span.currencySymbol,#totalWithCoa .currencySymbol{
+  display:none;
+}
+*{
+  -moz-box-sizing:border-box;
+  -moz-osx-font-smoothing:grayscale;
+  -webkit-box-sizing:border-box;
+  -webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;
+  box-sizing:border-box;
+  margin:0;
+  outline:none;
+  padding:0;
+  text-shadow:1px 1px 1px rgba(0,0,0,0.004);
+}
+.agree-wrapper{
+  margin:10px 0px 0px 200px;
+}
+.agree-wrapper-two{
+  font-size:12px;
+  margin:10px 0px 0px 0px;
+}
+.amex{
+  background:url(/_img/pay/default/cards.png)no-repeat;
+  background-position:-134px -5px;
+  display:inline-block;
+  height:34px;
+  width:55px;
+}
+.amountCurrencySymbol{
+  font-weight:bold;
+  position:absolute;
+  right:31%;
+  top:20%;
+}
+.bold{
+  font-weight:bold;
+}
+.button{
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  background-color:#f2f2f2;
+  border-radius:5px;
+  float:left;
+  font-weight:bold;
+  margin:5px 0px;
+  padding:5px;
+  text-align:center;
+  width:100%;
+}
+.button h2{
+  font-size:12px;
+}
+.card-title{
+  float:left;
+}
+.card-title p{
+  display:inline-block;
+  font-size:18px;
+  font-weight:bold;
+  padding:0px 5px 0px 5px;
+  width:100%;
+}
+.cardSpace{
+  display:inline-block;
+  margin-left:50px;
+}
+.cards-accepted{
+  display:inline-block;
+  font-size:18px;
+  font-weight:bold;
+  height:45px;
+  padding:15px 5px;
+}
+.cards-accepted p{
+  display:table-cell;
+  height:40px;
+  vertical-align:middle;
+}
+.check{
+  float:right;
+}
+.clear{
+  clear:both;
+  content:"";
+  display:table;
+}
+.clr{
+  clear:both;
+}
+.data{
+  display:table;
+  width:100%;
+}
+.discover{
+  background:url(/_img/pay/default/cards.png)no-repeat;
+  background-position:-199px -5px;
+  display:inline-block;
+  height:34px;
+  width:55px;
+}
+.displayNone{
+  display:none;
+  display:none !important;
+}
+.expire{
+  border-right:none;
+  font-style:italic;
+  font-weight:100;
+  text-align:right;
+}
+.header{
+  display:table;
+  width:100%;
+}
+.item_tax,.item_extended_cost_with_tax{
+  display:none;
+}
+.label{
+  display:block;
+  font-size:11px;
+  padding:5px 0px 10px 0px;
+}
+.mastercard{
+  background:url(/_img/pay/default/cards.png)no-repeat;
+  background-position:-71px -5px;
+  display:inline-block;
+  height:34px;
+  width:55px;
+}
+.pay{
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  background-color:#bababa;
+  border-radius:5px;
+  color:#FFF;
+  cursor:pointer;
+  display:inline-block;
+  float:right;
+  font-size:12px;
+  font-weight:bold !important;
+  margin-top:5px;
+  padding:10px 0px;
+  width:49%;
+}
+.payment-box-wrapper{
+  border-bottom:1px solid #dedede;
+  display:table;
+  width:100%;
+}
+.payment-inner-cost{
+  border-right:1px solid #dedede;
+  display:table-cell;
+  font-weight:bold;
+  padding:8px;
+  text-align:right;
+  width:15%;
+}
+.payment-inner-description{
+  border-right:1px solid #dedede;
+  display:table-cell;
+  font-weight:bold;
+  padding:8px;
+  width:40%;
+}
+.payment-inner-extended-cost{
+  display:table-cell;
+  font-weight:bold;
+  padding:8px;
+  text-align:right;
+  width:15%;
+}
+.payment-inner-left{
+  border-right:1px solid #dedede;
+  display:table-cell;
+  font-weight:bold;
+  padding:8px;
+  width:85%;
+}
+.payment-inner-quantity{
+  border-right:1px solid #dedede;
+  display:table-cell;
+  font-weight:bold;
+  padding:8px;
+  text-align:right;
+  width:15%;
+}
+.payment-inner-right{
+  display:table-cell;
+  padding:8px;
+  text-align:right;
+}
+.payment-inner-sku{
+  border-right:1px solid #dedede;
+  display:table-cell;
+  font-weight:bold;
+  padding:8px;
+  width:15%;
+}
+.payment-title{
+  padding:3px 5px;
+}
+.payment-title span{
+  display:inline-block;
+  font-size:19px;
+  padding-bottom:5px;
+  width:100%;
+}
+.payment-top-cost{
+  background-color:#f5f5f5;
+  border-right:1px solid #dedede;
+  display:table-cell;
+  padding-bottom:8px;
+  padding-right:8px;
+  padding-top:8px;
+  text-align:right;
+  width:15%;
+}
+.payment-top-description{
+  background-color:#f5f5f5;
+  border-right:1px solid #dedede;
+  display:table-cell;
+  padding-bottom:8px;
+  padding-left:8px;
+  padding-top:8px;
+  width:40%;
+}
+.payment-top-extended-cost{
+  background-color:#f5f5f5;
+  display:table-cell;
+  padding-bottom:8px;
+  padding-right:8px;
+  padding-top:8px;
+  text-align:right;
+  width:15%;
+}
+.payment-top-left{
+  background-color:#f5f5f5;
+  border-right:1px solid #dedede;
+  display:table-cell;
+  padding:8px;
+  width:70%;
+}
+.payment-top-quantity{
+  background-color:#f5f5f5;
+  border-right:1px solid #dedede;
+  display:table-cell;
+  padding-bottom:8px;
+  padding-right:8px;
+  padding-top:8px;
+  text-align:right;
+  width:15%;
+}
+.payment-top-right{
+  background-color:#f5f5f5;
+  display:table-cell;
+  padding:8px;
+  text-align:right;
+}
+.payment-top-sku{
+  background-color:#f5f5f5;
+  border-right:1px solid #dedede;
+  display:table-cell;
+  padding-bottom:8px;
+  padding-left:8px;
+  padding-top:8px;
+  width:15%;
+}
+.paymethod-wrapper .description{
+  font-style:italic;
+  padding-left:20px;
+}
+.paymethod-wrapper .label{
+  display:inline-block;
+}
+.readOnly{
+  -moz-box-shadow:none !important;
+  -webkit-box-shadow:none !important;
+  background-color:#f2f2f2 !important;
+  border:none !important;
+  box-shadow:none !important;
+  font-size:13px !important;
+  height:auto !important;
+  padding:5px !important;
+}
+.requiredMarker{
+  display:none;
+}
+.required_empty{
+  background-color:#ffdbdb;
+}
+.savings{
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  background-color:#FFF;
+  border-radius:5px;
+  display:inline-block;
+  font-size:12px;
+  margin-top:5px;
+  padding:10px 0px;
+  width:23%;
+}
+.secure-text{
+  background:url(/_img/pay/default/cards.png)no-repeat -7px -174px;
+  font-size:11px;
+  font-weight:100;
+  margin-bottom:20px;
+  padding:0px 0px 0px 18px;
+}
+.seqrLink{
+  font-weight:bold;
+}
+.seqrLink:hover{
+  cursor:pointer;
+  text-decoration:underline;
+}
+.total{
+  border-right:none;
+  text-align:right;
+}
+.visa{
+  background:url(/_img/pay/default/cards.png)no-repeat;
+  background-position:-6px -5px;
+  display:inline-block;
+  height:34px;
+  width:55px;
+}
+a:link,a:visited,a:hover,a.selected{
+  text-decoration:none;
+}
+body{
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  display:none;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:13px;
+  min-width:320px;
+}
+h1{
+  display:none;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight:normal;
+}
+hr{
+  display:none;
+}
+img{
+  -ms-interpolation-mode:bicubic;
+  border:0;
+  height:auto;
+  max-width:100%;
+  vertical-align:middle;
+  width:auto\9;
+}
+input[type=radio]{
+  margin-left:10px;
+  margin-right:10px;
+}
+input[type=text]{
+  -moz-box-shadow:inset 0px 1px 1px 0px #ccc;
+  -webkit-appearance:none;
+  -webkit-box-shadow:inset 0px 1px 1px 0px #ccc;
+  border:1px solid #c3c3c3;
+  border-top:1px solid #7c7c7c;
+  box-shadow:inset 0px 1px 1px 0px #ccc;
+  font-size:12px;
+  height:28px;
+  padding:5px 5px;
+  width:100%;
+}
+li{
+  display:block;
+}
+p{
+  padding-bottom:10px;
+}
+select{
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  border:1px solid #c3c3c3;
+  border-radius:5px;
+  color:#000;
+  display:block;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:11px;
+  font-weight:600;
+  height:28px;
+  line-height:1;
+  padding:5px;
+  width:170px;
+}
+ul,li{
+  list-style-type:none ;
+}
+@media screen and (max-width:670px){ 
+  #billingInformationSection ul{
+    float:none;
+    margin-right:0px ;
+    width:100%;
+  }
+  #chargeModelSection .titleWrapper{
+    float:left;
+  }
+  #content{
+    margin:0px auto 20px auto;
+  }
+  #formContainer{
+    padding:10px;
+  }
+  #paymentInformationSection ul{
+    float:none;
+    margin-right:0px;
+    width:100%;
+  }
+  #pt_card_expiration_year{
+    float:left;
+    margin-right:0px;
+    width:18%;
+  }
+  #pt_card_security_code{
+    background:none;
+    float:right;
+    margin:0;
+  }
+  #pt_card_security_code input{
+    width:100%;
+  }
+  #pt_creditradio .label,#pt_achradio .label,#pt_seqrRadio .label{
+    display:inline-block;
+    width:auto;
+  }
+  #shippingInformationSection ul{
+    float:none;
+    margin-right:0px ;
+    width:100%;
+  }
+  #submitButton,.submitButton{
+    margin:25px 0px 25px 0px;
+    width:49%;
+  }
+  .agree-wrapper{
+    margin:10px 0px 0px 0px;
+  }
+  .amountCurrencySymbol{
+    top:25%;
+  }
+  .card-title{
+    float:none;
+  }
+  .cardSpace{
+    display:none;
+  }
+  .cards-accepted{
+    display:inline-block;
+    font-size:18px;
+    font-weight:bold;
+    height:50px;
+    padding:15px 5px;
+    width:100%;
+  }
+  .label{
+    display:block;
+    width:100%;
+  }
+  input[type=text]{
+    display:inline-block;
+    width:100%;
+  }
+}

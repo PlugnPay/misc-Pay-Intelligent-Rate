@@ -1,0 +1,1066 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--[if lt IE 10]>
+<script src="/_js/ie-7-8-9.js">IE7_PNG_SUFFIX=".png";</script>
+<![endif]-->
+
+<script language="javascript" src="_js/jquery-1.10.2.min.js"></script>
+<link rel="stylesheet" href="_css/payscreens.css" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_css/jquery-ui-1.10.3.custom.css" type="text/css">
+<script language="javascript" src="_js/jquery-ui.js"></script>
+<script language='javascript' src='_js/DataValidation.js'></script>
+<script language='javascript' src='_js/Input.js'></script>
+<script language='javascript' src='_js/autoswipe.js'></script>
+<script language='javascript' src='_js/Pack.js'></script>
+<script language='javascript' src='_js/pay.js'></script>
+<!-- Custom Code -->
+<!-- DEFAULT FORM INITIALIZATION CODE -->
+<script language='javascript'>
+jQuery('document').ready(function() {
+	//set defaults
+	PayScreens.setInputValue('pt_billing_country',["US"]);
+	PayScreens.setInputValue('pt_shipping_country',["US"]);
+
+	jQuery("#billingInformationSection").insertAfter("#paymentInformationSection");
+	jQuery('#shippingInformationSection').insertAfter('#billingInformationSection');
+	jQuery("#pt_billing_country").insertAfter("#pt_billing_postal_code");
+	jQuery("#pt_card_security_code").insertAfter("#pt_card_expiration_year");
+		 
+	jQuery("span.label").each(function() {
+		jQuery(this).next().after( jQuery(this) );
+	});
+		
+	jQuery("#submitButton").text("Submit Payment");
+	
+	var newTopHTML = '';
+	newTopHTML += '\
+			<div class="payment-title">\
+				<p><span>Payment Summary</span><br />Please review the following details for this transaction</p>\
+			</div>\
+			<div style="height:15px;"></div>\
+			<div class="payment-title">\
+				<p><span>Billing Information</span><br />Enter your payment details below.</p>\
+			</div>\
+			<div class="cards-accepted-wrapper">\
+				<div class="cards-accepted">\
+					<p>Cards Accepted</p>\
+				</div>\
+				<div class="cardSpace"></div>\
+				<div class="visa" style="display:none"></div>\
+				<div class="mastercard" style="display:none"></div>\
+				<div class="amex" style="display:none"></div>\
+				<div class="discover" style="display:none"></div>\
+			</div>\
+	';
+	jQuery("#topOfForm").prepend(newTopHTML);
+
+	var newCardHTML = '';
+	newCardHTML += '<div class="card-title">\
+				<p><span class="card-title-text"></span></p>\
+				<div class="secure-text">Secure</div>\
+			</div>';
+	jQuery("#paymentInformationSection").prepend(newCardHTML);
+
+	jQuery('#errorSection').insertBefore('#formContainer');
+	
+	var newClearHTML = '';
+	newClearHTML += '<div class="clr"></div>';
+	jQuery(newClearHTML).insertAfter("#pt_payment_last_name"); 					
+
+	jQuery("#pt_transaction_amount").insertAfter(".payment-title:first");
+
+	//itemization
+	jQuery("#itemizationSection").insertAfter(".payment-title:first-of-type");
+	jQuery("#itemizationSection").wrap('<div id="shoppingCart"></div>');
+
+	jQuery("#extended_cost_total_row").wrap('<div class="payment-box-wrapper"></div>');	
+	jQuery(".extended_cost_total").wrap('<div class="payment-inner-left total"></div>');
+	jQuery(".extended_cost_total_amount").wrap('<div class="payment-inner-right bold"></div>');
+
+	jQuery("#tax_total_row").wrap('<div class="payment-box-wrapper"></div>');	
+	jQuery(".tax_total").wrap('<div class="payment-inner-left total"></div>');
+	jQuery(".tax_total_amount").wrap('<div class="payment-inner-right bold"></div>');
+
+	jQuery("#grand_total_row").wrap('<div class="payment-box-wrapper"></div>');	
+	jQuery(".grand_total").wrap('<div class="payment-inner-left total"></div>');
+	jQuery(".grand_total_amount").wrap('<div class="payment-inner-right bold"></div>');
+
+	jQuery("#itemizationSection .header").wrap('<div class="payment-box-wrapper"></div>');
+	jQuery("#itemizationSection .header .item_identifier").wrap('<div class="payment-top-sku"></div>');
+
+	jQuery("#itemizationSection .header .item_description").wrap('<div class="payment-top-description"></div>');
+
+	jQuery("#itemizationSection .header .item_quantity").wrap('<div class="payment-top-quantity"></div>');
+
+	jQuery("#itemizationSection .header .item_cost").wrap('<div class="payment-top-cost"></div>');
+
+	jQuery("#itemizationSection .header .item_extended_cost").wrap('<div class="payment-top-extended-cost"></div>');
+
+	jQuery("#itemizationSection .data").wrap('<div class="payment-box-wrapper"></div>');
+	jQuery("#itemizationSection .data .item_identifier").wrap('<div class="payment-inner-sku"></div>');
+
+	jQuery("#itemizationSection .data .item_description").wrap('<div class="payment-inner-description"></div>');
+
+	jQuery("#itemizationSection .data .item_quantity").wrap('<div class="payment-inner-quantity"></div>');
+
+	jQuery("#itemizationSection .data .item_cost").wrap('<div class="payment-inner-cost"></div>');
+
+	jQuery("#itemizationSection .data .item_extended_cost").wrap('<div class="payment-inner-extended-cost"></div>');
+
+
+	jQuery('.header div:last').remove(); 
+	
+	jQuery(".data").children("div:last-child").remove(); 
+
+	//end itemization
+	
+	var newTerms = '';
+	newTerms += "\
+		<div id='disclaimer'>\
+			<a href='https://pay1.plugnpay.com/payment/PrivacyPolicy.html' target='_blank'>Terms &amp; Conditions</a>\
+		</div>"
+	;
+	jQuery(newTerms).insertAfter('#content'); 
+
+	var seqrHTML = '';
+	seqrHTML += "\
+		<div id='seqrInformation' style='display:none'>\
+			<p id='seqrSummary'>SEQR (se - cure) is the most widely used global mobile payment solution. It is an open platform that works on iOS, Android, and Windows phones. Visit the Apple Store, Google Play, or the Windows store to download SEQR and start saving today</p>\
+			<div id='seqrCode'></div>\
+			<button id='generateSeqrCodeButton' class='submitButton'>Generate QR Code</button>\
+		</div>\
+	";
+	jQuery('#paymentInformationSection').append(seqrHTML);
+
+	jQuery('#generateSeqrCodeButton').click(function(event) {
+		event.preventDefault();
+		PayScreens.generateSeqrCode(jQuery('#seqrCode'));
+		jQuery('#generateSeqrCodeButton').hide();
+	});
+
+}); // end document.ready
+
+PayScreens.additionalSetup = function() {
+	//set payment type to 'credit' if not passed
+	if (jQuery('input[name=pd_transaction_payment_type]').val() == "") {
+		PayScreens.setPaymentType('credit');
+		jQuery('input[name=pd_transaction_payment_type]').val('credit').change();
+	}
+
+	//set requirements for cvv field
+	jQuery('input[name=pt_card_security_code]').attr('maxlength','4');
+	Input.setAsNumericInput(jQuery('input[name=pt_card_security_code]'));
+
+	//exp drop downs
+        PayScreens.expirationMonthToSelect('pt_card_expiration_month');
+        PayScreens.expirationYearToSelect('pt_card_expiration_year');
+
+	//get country and state lists
+	//billing section
+	PayScreens.countryToSelect('pt_billing_country');
+	var billingCountryCodeSelected = PayScreens.getInputValue('pt_billing_country');
+	PayScreens.getStates(billingCountryCodeSelected,'pt_billing_state');
+	PayScreens.changeStatesByCountry('pt_billing_country','pt_billing_state');
+	//shipping section
+	PayScreens.countryToSelect('pt_shipping_country');
+	var shippingCountryCodeSelected = PayScreens.getInputValue('pt_shipping_country');
+	PayScreens.getStates(shippingCountryCodeSelected,'pt_shipping_state');
+	PayScreens.changeStatesByCountry('pt_shipping_country','pt_shipping_state');
+
+	// add placholder text
+	jQuery('input[type=text]').each(function() {
+		var label = (jQuery(this).parent().parent().find('.label').text());
+		jQuery(this).attr('placeholder',label);
+	});
+	jQuery('input[name=pt_payment_name]').attr('placeholder','Full Name as it appears on your Credit Card');
+	jQuery('input[name=pt_transaction_amount]').attr('placeholder','Enter Amount');
+
+	// create comments text area
+	if (!jQuery('#pt_customer_comments').hasClass('displayNone')) { //not hidden
+		PayScreens.inputToTextArea('pt_customer_comments','4','49');
+	}
+
+	//get card types
+	if (PayScreens.getInputValue('pb_cards_allowed') != '') {
+		var cardTypes = PayScreens.getInputValue('pb_cards_allowed').toLowerCase();
+		if (new RegExp("visa").test(cardTypes) == true) { jQuery('.visa').show() }
+		if (new RegExp("mastercard").test(cardTypes) == true) { jQuery('.mastercard').show() }
+		if (new RegExp("amex").test(cardTypes) == true) { jQuery('.amex').show() }
+		else {  //hide amex cvv image
+			jQuery('#pt_card_security_code').prepend("<span id='hideAmexCVV'></span>");
+			jQuery('#hideAmexCVV').css({
+			"float": "right",
+			"background-color": "#FFF",
+			"width": "44px",
+			"height": "22px"});
+		}
+		if (new RegExp("discover").test(cardTypes) == true) { jQuery('.discover').show() }
+	}
+	else {
+		jQuery('.visa, .mastercard, .amex, .discover').show();
+	}
+
+	if (jQuery('input[name=pt_transaction_amount]').val().length > 0) {
+		jQuery('input[name=pt_transaction_amount]').attr('readonly',true);
+		jQuery('input[name=pt_transaction_amount]').addClass('readOnly');
+	}
+
+	// display and format required field markers
+	requiredFieldMarkers();
+	jQuery('input[name=pd_transaction_payment_type]').change(function() {
+		requiredFieldMarkers();
+	});
+
+	jQuery('#pt_transaction_amount .input').prepend("<span class='amountCurrencySymbol'>" + PayScreens.getCurrencySymbolHTML() + "</span>");
+
+	// payment method heading when page loads
+	if (jQuery('input[name=pd_transaction_payment_type]').val() == "ach") {
+		jQuery('.card-title-text').text('eCheck');
+		jQuery('.cards-accepted-wrapper').hide();
+	}
+	else if (jQuery('input[name=pd_transaction_payment_type]').val() == "seqr" && jQuery('input[name=pt_transaction_amount]').is('[readonly]')) {
+		jQuery('.card-title-text').text('SEQR');
+		jQuery('.cards-accepted-wrapper').hide();
+		jQuery('#seqrInformation').show();
+		jQuery('#submitButton').hide();
+		if (!PayScreens.getSeqrEnabled()) { //seqr not enabled
+			jQuery('#seqrInformation').html('Account not set up for SEQR');
+		}
+	}
+	else {
+		jQuery('.card-title-text').text('Credit Card');
+	}
+
+	var newBillingHTML = '';
+	newBillingHTML += "\
+		<div class='card-title'>\
+			<p>" + jQuery('#billingInformationSection h1').text() + "</p>\
+		</div>\
+	";
+	jQuery("#billingInformationSection").prepend(newBillingHTML);
+
+	var newShippingHTML = '';
+	newShippingHTML += "\
+		<div class='card-title'>\
+			<p>" + jQuery('#shippingInformationSection h1').text() + "</p>\
+		</div>\
+	";
+	jQuery("#shippingInformationSection").prepend(newShippingHTML);
+
+
+	var payMethodOptions = '';
+	//add payment method radio buttons
+	if (PayScreens.showMultiplePaymentOptions(PayScreens.getInputValue('pd_transaction_payment_type'))) {
+		payMethodOptions += "\
+			<div class='paymethod-wrapper'>\
+			<li id='payMethod'><label><span class='label'>Select Payment Method</span></label></li>\
+			<li id='pt_creditradio'><label><input type='radio' name='pt_paymethod' id='pt_showcredit' checked><span class='label'>Credit/Debit Cards</span><span class='input'></span><span class='description'></span></label></li>";
+
+		if (PayScreens.getACHEnabled()) {
+			payMethodOptions += "<li id='pt_achradio'><label><input type='radio' name='pt_paymethod' id='pt_showach'><span class='label'>eCheck</span><span class='input'></span><span class='description'></span></label></li>";
+		}
+
+		if (PayScreens.getSeqrEnabled() && jQuery('input[name=pt_transaction_amount]').is('[readonly]')) {
+			payMethodOptions += "<li id='pt_seqrRadio'><label><input type='radio' name='pt_paymethod' id='pt_showSeqr'><span class='label'>SEQR</span><span class='input'></span><span class='description'></span></label></li>";
+		}
+		
+		payMethodOptions += "</div>";
+	}
+	else {
+		// create pt_showcredit so it can be 'clicked' by the coa code
+		payMethodOptions += "<input type='radio' id='pt_showcredit' style='display:none'>";
+	}
+	jQuery('.cards-accepted-wrapper').before(payMethodOptions);
+
+	//make sure paymethod loads correctly after server-side error or if passed
+	if (jQuery('input[name=pd_transaction_payment_type]').val() == "ach") {
+		jQuery('#pt_showach').click();
+	}
+	if (jQuery('input[name=pd_transaction_payment_type]').val() == "seqr") {
+		jQuery('#pt_showSeqr').click();
+	}
+
+	// standard radio button functions
+	jQuery('#pt_showcredit').click(function() {
+		PayScreens.setPaymentType('credit');
+		jQuery('input[name=pd_transaction_payment_type]').val('credit').change();
+		jQuery('#pt_showcredit').prop('checked', true);
+		jQuery('.card-title-text').text('Credit Card');
+		jQuery('.cards-accepted-wrapper').show();
+		jQuery('#seqrInformation').hide();
+		jQuery('#submitButton').show();
+	});
+	jQuery('#pt_showach').click(function() {
+		PayScreens.setPaymentType('ach');
+		jQuery('input[name=pd_transaction_payment_type]').val('ach').change();
+		jQuery('#pt_showach').prop('checked', true);
+		jQuery('.card-title-text').text('eCheck');
+		jQuery('.cards-accepted-wrapper').hide();
+		jQuery('#seqrInformation').hide();
+		jQuery('#submitButton').show();
+	});
+	jQuery('#pt_showSeqr').click(function() {
+		PayScreens.setPaymentType('seqr');
+		jQuery('input[name=pd_transaction_payment_type]').val('seqr').change();
+		jQuery('#pt_showSeqr').prop('checked', true);
+		jQuery('.card-title-text').text('SEQR');
+		jQuery('.cards-accepted-wrapper').hide();
+		jQuery('#seqrInformation').show();
+		jQuery('#submitButton').hide();
+	});
+
+	// hide radio button options if 'pt_transaction_payment_type_selectable=no' 
+	if (PayScreens.getInputValue('pt_transaction_payment_type_selectable') == "no") {
+		jQuery('#topOfForm .paymethod-wrapper').hide();
+	}
+		
+}
+
+requiredFieldMarkers = function() {
+	// display and format required field markers
+	jQuery('input').each(function() {
+		if (!jQuery(this).is('[readonly]')) { //not readonly
+			var field = "#" + jQuery(this).attr('name');
+			jQuery(field + ' .input > .requiredMarkerWrapper .requiredMarker').show().css({
+			'float':'left',
+			'color':'#f00',
+			'padding-top':'5px'});
+		}
+	});
+	jQuery('#pt_transaction_amount .requiredMarker').css('padding-top','0px');
+}
+</script>
+<!-- END DEFAULT FORM INITIALIZATION CODE -->
+<!-- COA COMPONENT --> 
+<script language='javascript'>
+var nonCoaAdditionalSetup = PayScreens.additionalSetup;
+
+var coaFee = '';
+var creditDiscount = 0;
+var creditFee = '';
+var debitDiscount = '';
+var debitFee = '';
+var checkDiscount = '';
+var checkFee = '';
+var seqrFee = '';
+var seqrDiscount = '';
+var maxAdjustment = '';
+var transactionAmount = '';
+var totalWithCoa = '';
+var totalWithAchCoa = '';
+var threshold = '';
+var displayDebitOption = '';
+var displayACHOption = '';
+var calcReset = '';
+var achCall = '';
+var seqrCall = '';
+var initialCall = '';
+var stateAllowsSurcharge = true;
+PayScreens.preCalculatorSetup = function() {
+	var bin = jQuery('input[name=pt_card_number]').val().substr(0,9);
+	var lastBin = PayScreens.getLastCalculatedCardNumber().substr(0,9);
+	var calculatedTotal = PayScreens.getLastCalculatedTotal();
+	var total = PayScreens.getInputValue('pt_transaction_amount').replace(/[^\d\.]/g,'')
+	var cardLength = jQuery('input[name=pt_card_number]').val().length;
+
+	// check for avsonly transaction and if state allows surcharge
+	if (PayScreens.isAvsOnlyTransaction() || stateAllowsSurcharge == false) {
+		jQuery('input[name=pt_convenience_fee_amount]').val('0');
+		jQuery('#totalWithCoa input').val(total);
+		jQuery('#chargeModelSection .buttons > h1 span.yourFee').html("No additonal fee");
+		jQuery('#chargeModelSection span.currencySymbol').hide();
+		jQuery('#chargeModelSection .buttons .credit, #chargeModelSection .buttons .debit, #chargeModelSection .buttons .check, #chargeModelSection .buttons .seqr').hide();
+		jQuery('#chargeModelSection span.feeAmount').html('');
+	}
+
+	else if ((cardLength >= 9) || (achCall == true) || (seqrCall == true) || (initialCall == true)) {
+		if ((bin != lastBin) || (total != calculatedTotal) || (calcReset == 'yes')) {
+       		jQuery('#chargeModelSection .buttons > h1 span.yourFee, #chargeModelSection .message h1').html("Calculating, please wait...");
+			jQuery('#chargeModelSection .credit').hide();
+			jQuery('#chargeModelSection .debit').hide();
+			jQuery('#chargeModelSection .check').hide();
+			jQuery('#chargeModelSection .seqr').hide();
+			jQuery('#chargeModelSection hr.choiceSeparator').hide();
+			jQuery('#chargeModelSection span.currencySymbol').hide();
+			jQuery('#totalWithCoa .currencySymbol').hide();
+			jQuery('#chargeModelSection .buttons > h1').show();
+			jQuery('#totalWithCoa input, #convenienceFeeAmount input').val("Please Wait...");
+			jQuery('#chargeModelSection span.feeAmount').html('');
+			jQuery('#submitButton').attr("disabled", "disabled");
+			jQuery('#submitButton').css('opacity','0.5');
+			calcReset = 'no';
+       			return true;
+		}
+	}
+	return false;
+} //end preCalculatorSetup
+
+PayScreens.calculatorCallback = function(data,isACH) {
+
+	if (typeof(data) != undefined) {
+		if (jQuery('#convenienceFee').length) {
+			var oldConvenienceFee = parseFloat(data['creditAdjustment'],10).toFixed(2);
+			if (!isNaN(oldConvenienceFee)) { coaFee = oldConvenienceFee; } // old convenienceFee setup
+			else { coaFee = parseFloat(data['adjustment'],10).toFixed(2); } 
+		}
+		else {
+			coaFee = parseFloat(data['adjustment'],10).toFixed(2);
+			jQuery('#chargeModelSection span.currencySymbol').show();
+		}
+
+		debitFee = parseFloat(data['debitAdjustment'],10).toFixed(2);
+
+		checkFee = parseFloat(data['achAdjustment'],10).toFixed(2);
+
+		seqrFee = parseFloat(data['seqrAdjustment'],10).toFixed(2);
+
+		maxAdjustment = parseFloat(data['maxAdjustment'],10).toFixed(2); 
+		threshold = parseFloat(data['threshold'],10); 
+
+		creditFee = maxAdjustment;
+		creditDiscount = parseFloat(creditDiscount).toFixed(2);
+
+		transactionAmount = parseFloat(jQuery('input[name=pt_transaction_amount]').val(),10).toFixed(2);
+
+		totalWithCoa = parseFloat(coaFee) + parseFloat(transactionAmount);
+		totalWithCoa = totalWithCoa.toFixed(2);
+
+		totalWithAchCoa = parseFloat(checkFee) + parseFloat(transactionAmount);
+		totalWithAchCoa = totalWithAchCoa.toFixed(2);
+
+		totalWithSeqrCoa = parseFloat(seqrFee) + parseFloat(transactionAmount);
+		totalWithSeqrCoa = totalWithSeqrCoa.toFixed(2);
+
+		jQuery('#totalWithCoa .currencySymbol').show();
+
+		if (achCall == true) {
+			jQuery('#chargeModelSection .buttons > h1 span.feeAmount').html(checkFee);
+			jQuery('#convenienceFeeAmount input').val(checkFee);
+			jQuery('#totalWithCoa input').val(totalWithAchCoa);
+			jQuery('#pt_convenience_fee_amount').val(checkFee); //passed field
+			//get discounts
+			debitDiscount = parseFloat(checkFee - debitFee).toFixed(2);
+			checkDiscount = parseFloat(0).toFixed(2);
+			seqrDiscount = parseFloat(checkFee - seqrFee).toFixed(2);
+		}
+		else if (seqrCall == true) {
+			jQuery('#chargeModelSection .buttons > h1 span.feeAmount').html(seqrFee); 
+			jQuery('#convenienceFeeAmount input').val(seqrFee);
+			jQuery('#totalWithCoa input').val(totalWithSeqrCoa);
+			jQuery('#pt_convenience_fee_amount').val(seqrFee); //passed field
+			//get discounts
+			debitDiscount = parseFloat(seqrFee - debitFee).toFixed(2);
+			checkDiscount = parseFloat(seqrFee - checkFee).toFixed(2);
+			seqrDiscount = parseFloat(0).toFixed(2);
+		}
+		else {
+			jQuery('#chargeModelSection .buttons > h1 span.feeAmount').html(coaFee);
+			jQuery('#convenienceFeeAmount input').val(coaFee);
+			jQuery('#totalWithCoa input').val(totalWithCoa);
+			jQuery('#pt_convenience_fee_amount').val(coaFee); //passed field
+			//get discounts
+			debitDiscount = parseFloat(coaFee - debitFee).toFixed(2);
+			checkDiscount = parseFloat(coaFee - checkFee).toFixed(2);
+			seqrDiscount = parseFloat(coaFee - seqrFee).toFixed(2);
+		}
+
+		jQuery('#chargeModelSection div.credit span.discount').html(creditDiscount);
+		jQuery('#chargeModelSection div.credit span.feeAmount').html(creditFee);
+
+		jQuery('#chargeModelSection div.debit span.discount').html(debitDiscount);
+		jQuery('#chargeModelSection div.debit span.feeAmount').html(debitFee);
+
+		jQuery('#chargeModelSection div.check span.discount').html(checkDiscount);
+		jQuery('#chargeModelSection div.check span.feeAmount').html(checkFee);
+
+		jQuery('#chargeModelSection div.seqr span.discount').html(seqrDiscount);
+		jQuery('#chargeModelSection div.seqr span.feeAmount').html(seqrFee);
+
+	}
+	// enable submit button
+	if (coaFee != '') {
+		jQuery('#submitButton').removeAttr("disabled");
+		jQuery('#submitButton').css('opacity','1.0');
+	}
+
+	/* Control coa button display */
+	displayDebitOption = debitDiscount > threshold;
+	displayACHOption = checkDiscount > threshold;
+
+	// credit section
+	if (PayScreens.getCreditEnabled() == 1 && initialCall == true) {
+		jQuery('#chargeModelSection .credit').fadeIn('slow');
+	}
+	else {
+		jQuery('#chargeModelSection .credit').fadeOut('slow');
+	}
+	// debit section
+	if (PayScreens.getCreditEnabled() == 1) {
+		if ((displayDebitOption && debitDiscount > 0) || initialCall == true) {
+			jQuery('#chargeModelSection .debit').fadeIn('slow');
+		}
+	}
+	else {
+		jQuery('#chargeModelSection .debit').fadeOut('slow');
+	}
+	// ach section
+	if (PayScreens.getACHEnabled() == 1) {
+		if ((displayACHOption && checkDiscount > 0) || initialCall == true) {
+			jQuery('#chargeModelSection .check').fadeIn('slow');
+		}
+	}
+	else {
+		jQuery('#chargeModelSection .check').fadeOut('slow');
+	}
+	// seqr section
+	if (PayScreens.getSeqrEnabled() == 1 && jQuery('input[name=pd_transaction_payment_type]').val() != 'seqr') {
+		jQuery('#chargeModelSection .seqr').fadeIn('slow');
+	}
+	else {
+		jQuery('#chargeModelSection .seqr').hide();
+	}
+
+}; // end callback
+
+PayScreens.additionalSetup = function() {
+
+	nonCoaAdditionalSetup();
+
+	var companyName = PayScreens.getChargeAccountCompanyName();
+	
+	// coa button functions and radio button functions
+	jQuery('#chargeModelSection div.credit div.pay, #chargeModelSection div.debit div.pay').click(function() {
+		jQuery('#pt_showcredit').click(); //do standard functions when coa button is clicked
+	});
+	jQuery('#chargeModelSection div.credit div.pay, #chargeModelSection div.debit div.pay, #pt_showcredit').click(function() {
+		achCall = false;
+		seqrCall = false;
+		//go out to coa
+		calcReset = 'yes';
+		jQuery('#pt_card_number input').focus();
+		jQuery('#pt_card_number input').val('');
+		jQuery('#pt_card_security_code input').val('');
+		jQuery('#chargeModelSection .buttons > h1 span.currencySymbol').hide();
+		jQuery('#chargeModelSection .buttons > h1 span.feeAmount').html('');
+		jQuery('#totalWithCoa .currencySymbol').hide();
+		jQuery('#totalWithCoa input').val('');
+		jQuery('#pt_convenience_fee_amount').val(''); //passed field
+		//disable submit button
+		jQuery('#submitButton').attr("disabled", "disabled");
+		jQuery('#submitButton').css('opacity','0.5');
+		jQuery('.agree-wrapper-two').show();
+	});
+	jQuery('#chargeModelSection div.check div.pay').click(function() {
+		jQuery('#pt_showach').click(); //do standard functions when coa button is clicked
+	});
+	jQuery('#chargeModelSection div.check div.pay, #pt_showach').click(function() {
+		jQuery('#totalWithCoa input').val("Please Wait...");
+		seqrCall = false;
+		//go out to cardcharge
+		achCall = true;
+		calcReset = 'yes';
+		PayScreens.callCalculator(true);
+		jQuery('#pt_ach_routing_number input').focus();
+		jQuery('#pt_card_number input').val('');
+		jQuery('#totalWithCoa .currencySymbol').hide();
+		jQuery('.agree-wrapper-two').show();
+	});
+	jQuery('#chargeModelSection div.seqr div.pay').click(function() {
+		jQuery('#pt_showSeqr').click(); //do standard functions when coa button is clicked
+	});
+	jQuery('#chargeModelSection div.seqr div.pay, #pt_showSeqr').click(function() {
+		jQuery('#chargeModelSection .credit, #chargeModelSection .debit, #chargeModelSection .check, .agree-wrapper-two').hide();
+		achCall = false;
+		//go out to cardcharge
+		seqrCall = true;
+		calcReset = 'yes';
+		PayScreens.callCalculator(true);
+	});
+
+	
+	//add 'total with coa' field and checkbox
+	jQuery('#buttonSection').before("\
+		<div class='agree-wrapper'>\
+			<span id='totalWithCoaLabel'><label></label></span>\
+			<ul>\
+				<li id='totalWithCoa'><label><span class='label'></span><span class='amountCurrencySymbol'>" + PayScreens.getCurrencySymbolHTML() + "</span><span class='input'><input type='text' name='totalWithCoa' readonly></span><span class='description'></span></label></li>\
+			</ul>\
+			<div class='agree-wrapper-two'>\
+				<span id='coaCheckbox'></span><span id='companyName'>" + companyName + ".</span>\
+			</div>\
+		</div>\
+	");
+	jQuery('#pt_agree_to_terms').appendTo('#coaCheckbox');
+	jQuery('#pt_agree_to_terms').attr('type','checkbox').val('yes');
+
+	//Remove the required empty class if the checkbox is clicked.
+	jQuery('input[name=pt_agree_to_terms]').click(function() {
+		jQuery('#coaCheckbox').removeClass('required_empty');
+		jQuery('#companyName').removeClass('required_empty');
+	});
+
+	jQuery("#chargeModelSection").insertAfter("#pt_transaction_amount"); 
+
+	// click radio buttons if transaction type is passed
+	if (jQuery('input[name=pd_transaction_payment_type]').val() == "ach") {
+		jQuery('#pt_showach').click();
+	}
+	if (jQuery('input[name=pd_transaction_payment_type]').val() == "seqr") {
+		jQuery('#pt_showSeqr').click();
+	}
+
+	//display content after everything else runs
+	setTimeout(function() {
+		jQuery('body').show();
+	}, 1000);
+
+} // end additional setup
+
+PayScreens.customValidation = function() {
+	if (!jQuery('input[name=pt_agree_to_terms]').is(':checked')) {
+		jQuery('#coaCheckbox').addClass('required_empty');
+		jQuery('#companyName').addClass('required_empty');
+		return [0,-1,'You must agree to the terms to continue.'];
+	}
+	return [1,0];
+}; //end customValidation 
+
+</script>
+<!-- END COA COMPONENT --> 
+<!--Intelligent Rate Component-->
+<script language='javascript'>
+var originalCalculatorCallback = PayScreens.calculatorCallback;
+var coaAdditionalSetup = PayScreens.additionalSetup;
+
+PayScreens.calculatorCallback = function(data,isACH) {
+	originalCalculatorCallback(data,isACH);
+
+	if (initialCall == true) {
+		jQuery('#chargeModelSection .buttons .savings').hide();
+		if (jQuery('input[name=pd_transaction_payment_type]').val() == 'credit') {
+			jQuery('#chargeModelSection .buttons > h1').hide();
+			jQuery('#totalWithCoa input').val('');
+		}
+		else {
+			jQuery('#chargeModelSection .buttons > h1 span.yourFee').html("Your fee will be ");
+		}
+	}
+	else {
+		jQuery('#chargeModelSection .buttons .savings').show();
+		jQuery('#chargeModelSection .buttons > h1 span.yourFee').html("Your fee will be ");
+	}
+
+	initialCall = false;
+}
+
+PayScreens.additionalSetup = function() {
+	coaAdditionalSetup();
+
+	if (PayScreens.getSeqrEnabled()) {
+		// go out to calc when page loads
+		initialCall = true;
+		PayScreens.callCalculator('411111');
+	}
+
+	// add text
+	jQuery('#totalWithCoaLabel label').text('Total Payment Including the Intelligent Rate:'); 
+	jQuery('#coaCheckbox').append(' I authorize the Intelligent Rate to be charged to the card provided above. Intelligent Rate will appear on your statement as: ');
+};
+</script>
+<!--End Intelligent Rate Component-->
+
+<!-- merchant Custom Code -->
+<script language='javascript'>
+var intelligentRateCalculatorCallback = PayScreens.calculatorCallback;
+var intelligentRateAdditionalSetup = PayScreens.additionalSetup;
+
+PayScreens.additionalSetup = function() {
+	intelligentRateAdditionalSetup();
+
+	// your custome additional setup code here
+}
+
+PayScreens.calculatorCallback = function(data,isACH) {
+	intelligentRateCalculatorCallback(data,isACH);
+
+	// your custom callback code here
+}
+</script>
+<!-- End merchant Custom Code -->
+
+<!-- End Custom Code -->
+<script language='javascript'>
+jQuery('document').ready(function() {
+	PayScreens.setInputValueFromArray("pt_custom_name_2",["bala","nce_","due"]);
+	PayScreens.setInputValueFromArray("pt_gateway_account",["scot","ttes","t"]);
+	PayScreens.setInputValueFromArray("pt_ach_sec_code",["PPD"]);
+	PayScreens.setInputValueFromArray("pt_transaction_amount",["1.00"]);
+	PayScreens.setInputValueFromArray("pt_custom_value_1",["500"]);
+	PayScreens.setInputValueFromArray("pt_custom_name_1",["paym","ent_","due"]);
+	PayScreens.setInputValueFromArray("pt_custom_value_2",["5000"]);
+	PayScreens.setInputValueFromArray("pd_display_items",["no"]);
+});
+
+PayScreens.init({
+		"username": "",
+		"account": "scotttest",
+		"language": "EN-US", 
+		"achEnabled": "1",
+		"creditEnabled": "1",
+		"disabledCardTypes": "",
+		"paymentType": "",
+		"currencySymbolHTML": "&#36;",
+		"avsOnlyEnabled": "0",
+		"coaEnabled": "1",
+		"seqrEnabled": "0",
+		"coaSessionID": "98B4D05600819440DCC711E58C70B5FE63C85C4C30D",
+		"convenienceFeeEnabled": "0",
+		"companyName": "scott test company 1",
+		"chargeAccountCompanyName": "scott test",
+		"customFields": {"balance_due": "5000","payment_due": "500"},
+		"substitutions": {},
+	 	"metaphraseTemplate": ""
+               });
+
+jQuery('document').ready(function() {
+	jQuery('input[name=pt_card_number]').change(function() {
+		var cardNumber = jQuery('input[name=pt_card_number]').val();
+                var magensaCardNumber = '';
+                var magstripeCardNumber = '';
+
+		var clear = false;
+
+                if (cardNumber.length >= 4) {
+			magensaCardNumber = jQuery('input[name=pt_magensa]').val().substr(2,cardNumber.length);
+			magstripeCardNumber = jQuery('input[name=pt_magstripe]').val().substr(2,cardNumber.length);
+		} else {
+			clear = true;
+		}
+
+		if (magensaCardNumber != '') {
+			var prefix = magensaCardNumber.substr(0,4);
+			var suffix = magensaCardNumber.substr(-4,4);
+
+			if (cardNumber.substr(0,4) != prefix || cardNumber.substr(-4,4) != suffix) {
+				clear = true;
+			}
+		}
+
+		if (magstripeCardNumber != '') {
+			if (cardNumber != magstripeCardNumber) {
+				clear = true;
+			}
+		}
+
+		if (clear) {
+			jQuery('input[name=pt_magstripe]').val('');
+			jQuery('input[name=pt_magensa]').val('');
+			jQuery('input[name=pt_ksn]').val('');
+			jQuery('input[name=pt_device_serial_number]').val('');
+			jQuery('input[name=pt_encryption_track_1]').val('');
+			jQuery('input[name=pt_encryption_track_2]').val('');
+			jQuery('input[name=pt_encryption_track_3]').val('');
+		}
+	})
+})
+	
+</script>
+<meta content="content-type" content="text/html; charset=utf-8"/>
+</head>
+	<body>
+		<div id="content">
+			<div id="header">
+								<div id="headerImage"></div>
+				<hr class="short" />
+				<hr class="tall" />
+				<h1></h1>
+				<h2></h2>
+			</div>
+			<div id="mainContent">
+				<div id="customizableTopSection" class="section"><img class="logo" alt="" src="/_img/merchant/scotttest/logo.png"></div>	
+				<div id="formContainer" style="visibility: hidden">
+					<form method='POST' action='/payment/auth.cgi' >
+						<div id="errorSection"><h1></h1></div>
+						<div id="topOfForm" class="section"></div>
+							<input type="hidden" name="pt_subtotal" id="pt_subtotal" value="0.00"></input>
+						<div id="billingAndPaymentSections">
+							<div id="billingInformationSection" class="section">
+								<h1></h1><hr class="sectionHeaderHR" />
+								<span id="billingMessage"></span>
+								<ul>
+									<li id="pt_billing_name"><label><span class="label"></span><span class="input"><input type="text" name="pt_billing_name"></span><span class="description"></span></label></li>
+									<li id="pt_billing_first_name"><label><span class="label"></span><span class="input"><input type="text" first_name="pt_billing_first_name"></span><span class="description"></span></label></li>
+									<li id="pt_billing_last_name"><label><span class="label"></span><span class="input"><input type="text" last_name="pt_billing_last_name"></span><span class="description"></span></label></li>
+									<li id="pt_billing_address_1"><label><span class="label"></span><span class="input"><input type="text" name="pt_billing_address_1"></span><span class="description"></span></label></li>
+									<li id="pt_billing_address_2"><label><span class="label"></span><span class="input"><input type="text" name="pt_billing_address_2"></span><span class="description"></span></label></li>
+									<li id="pt_billing_city"><label><span class="label"></span><span class="input"><input type="text" name="pt_billing_city"></span><span class="description"></span></label></li>
+									<li id="pt_billing_state"><label><span class="label"></span><span class="input"><input type="text" name="pt_billing_state"></span><span class="description"></span></label></li>
+									<li id="pt_billing_province"><label><span class="label"></span><span class="input"><input type="text" name="pt_billing_province"></span><span class="description"></span></label></li>
+									<li id="pt_billing_country"><label><span class="label"></span><span class="input"><input type="text" name="pt_billing_country"></span><span class="description"></span></label></li>
+									<li id="pt_billing_postal_code"><label><span class="label"></span><span class="input"><input type="text" name="pt_billing_postal_code"></span><span class="description"></span></label></li>
+									<li id="pt_billing_email_address"><label><span class="label"></span><span class="input"><input type="text" name="pt_billing_email_address"></span><span class="description"></span></label></li>
+									<li id="pt_billing_phone_number"><label><span class="label"></span><span class="input"><input type="text" name="pt_billing_phone_number"></span><span class="description"></span></label></li>
+									<li id="pt_billing_company"><label><span class="label"></span><span class="input"><input type="text" name="pt_billing_company"></span><span class="description"></span></label></li>
+									<li id="pt_customer_comments"><label><span class="label"></span><span class="input"><input type="text" name="pt_customer_comments"></span><span class="description"></span></label></li>
+								</ul>
+								<div class='clear'></div>
+							</div>
+							<div id="shippingInformationSection" class="section">
+								<h1></h1><hr class="sectionHeaderHR" />
+								<ul>
+									<li id="pt_shipping_name"><label><span class="label"></span><span class="input"><input type="text" name="pt_shipping_name"></span><span class="description"></span></label></li>
+									<li id="pt_shipping_first_name"><label><span class="label"></span><span class="input"><input type="text" first_name="pt_shipping_first_name"></span><span class="description"></span></label></li>
+									<li id="pt_shipping_last_name"><label><span class="label"></span><span class="input"><input type="text" last_name="pt_shipping_last_name"></span><span class="description"></span></label></li>
+									<li id="pt_shipping_address_1"><label><span class="label"></span><span class="input"><input type="text" name="pt_shipping_address_1"></span><span class="description"></span></label></li>
+									<li id="pt_shipping_address_2"><label><span class="label"></span><span class="input"><input type="text" name="pt_shipping_address_2"></span><span class="description"></span></label></li>
+									<li id="pt_shipping_city"><label><span class="label"></span><span class="input"><input type="text" name="pt_shipping_city"></span><span class="description"></span></label></li>
+									<li id="pt_shipping_state"><label><span class="label"></span><span class="input"><input type="text" name="pt_shipping_state"></span><span class="description"></span></label></li>
+									<li id="pt_shipping_province"><label><span class="label"></span><span class="input"><input type="text" name="pt_shipping_province"></span><span class="description"></span></label></li>
+									<li id="pt_shipping_country"><label><span class="label"></span><span class="input"><input type="text" name="pt_shipping_country"></span><span class="description"></span></label></li>
+									<li id="pt_shipping_postal_code"><label><span class="label"></span><span class="input"><input type="text" name="pt_shipping_postal_code"></span><span class="description"></span></label></li>
+									<li id="pt_shipping_email"><label><span class="label"></span><span class="input"><input type="text" name="pt_shipping_email"></span><span class="description"></span></label></li>
+									<li id="pt_shipping_phone"><label><span class="label"></span><span class="input"><input type="text" name="pt_shipping_phone"></span><span class="description"></span></label></li>
+								</ul>
+								<div class='clear'></div>
+							</div>
+							<div id="paymentInformationSection" class="section">
+								<h1></h1><hr class="sectionHeaderHR" />
+								<span id="paymentMessage"></span>
+								<ul>
+									<li id="pt_payment_name"><label><span class="label"></span><span class="input"><input type="text" name="pt_payment_name"></span><span class="description"></span></label></li>
+									<li id="pt_payment_first_name"><label><span class="label"></span><span class="input"><input type="text" name="pt_payment_first_name"></span><span class="description"></span></label></li>
+									<li id="pt_payment_last_name"><label><span class="label"></span><span class="input"><input type="text" name="pt_payment_last_name"></span><span class="description"></span></label></li>
+									<li id="pt_card_number"><label><span class="label"></span><span class="input"><input type="text" name="pt_card_number" autocomplete="off"></span><span class="description"></span></label></li>
+									<li id="pt_card_security_code"><label><span class="label"></span><span class="input"><input type="text" name="pt_card_security_code" autocomplete="off"></span><span class="description"></span></label></li>
+									<li id="pt_card_expiration_month"><label><span class="label"></span><span class="input"><input type="text" name="pt_card_expiration_month" autocomplete="off"></span><span class="description"></span></label></li>
+									<li id="pt_card_expiration_year"><label><span class="label"></span><span class="input"><input type="text" name="pt_card_expiration_year" autocomplete="off"></span><span class="description"></span></label></li>
+									<li id="pt_card_expiration"><label><span class="label"></span><span class="input"><input type="text" name="pt_card_expiration" autocomplete="off"></span><span class="description"></span></label></li>
+									<li id="pt_ach_routing_number"><label><span class="label"></span><span class="input"><input type="text" name="pt_ach_routing_number" autocomplete="off"></span><span class="description"></span></label></li>
+									<li id="pt_ach_account_number"><label><span class="label"></span><span class="input"><input type="text" name="pt_ach_account_number" autocomplete="off"></span><span class="description"></span></label></li>
+									<li id="pt_ach_account_type"><label><span class="label"></span><span class="input select"><select name="pt_ach_account_type"><option class="checking" value="checking"></option><option class="savings" value="savings"></option></select></span><span class="description"></span></label></li>
+									<li id="pt_ach_account_class"><label><span class="label"></span><span class="input select"><select name="pt_ach_account_class"><option class="personal" value="personal"></option><option class="business" value="business"></option></select></span><span class="description"></span></label></li>
+									<li id="pt_ach_sec_code"><label><span class="label"></span><span class="input"><input type="text" name="pt_ach_sec_code" autocomplete="off"></span><span class="description"></span></label></li>
+									<li id="pt_transaction_amount"><label><span class="label"></span><span class="input"><input type="text" name="pt_transaction_amount"></span><span class="description"></span></label></li>
+									<li id="pt_authorization_code"><label><span class="label"></span><span class="input"><input type="text" name="pt_authorization_code" autocomplete="off"></span><span class="description"></span></label></li>
+									<li id="pt_order_classifier"><label><span class="label"></span><span class="input"><input type="text" name="pt_order_classifier" autocomplete="off"></span><span class="description"></span></label></li>
+									<li id="pt_purchase_order_number"><label><span class="label"></span><span class="input"><input type="text" name="pt_purchase_order_number" autocomplete="off"></span><span class="description"></span></label></li>
+									<li id="pt_account_code_1"><label><span class="label"></span><span class="input"><input type="text" name="pt_account_code_1"></span><span class="description"></span></label></li>
+									<li id="pt_account_code_2"><label><span class="label"></span><span class="input"><input type="text" name="pt_account_code_2"></span><span class="description"></span></label></li>
+									<li id="pt_account_code_3"><label><span class="label"></span><span class="input"><input type="text" name="pt_account_code_3"></span><span class="description"></span></label></li>
+								</ul>
+								<div class='clear'></div>
+							</div>
+						</div>
+						<div id="chargeModelSection"><div id="vff">
+	<div class="buttons">
+		<h1><span class="yourFee"></span><span class='currencySymbol'></span><span class="feeAmount"></span></h1>
+		<div class='credit button choice'>
+			<div class='titleWrapper'>
+				<h1></h1>
+				<h2><span class="yourFee"></span><span class='currencySymbol'></span><span class="feeAmount"></span></h2>
+			</div>
+			<hr>
+			<div class='savings'>
+				<span class='savingsOf'></span>:<br>
+				<span class='currencySymbol'></span><span class='discount'></span><br>
+			</div>
+			<div class='pay'>
+				<span class='payVia'></span><br>
+				<span class='type'></span>
+			</div>
+		</div>
+		<div class='debit button choice'>
+			<div class='titleWrapper'>
+				<h1></h1>
+				<h2><span class="yourFee"></span><span class='currencySymbol'></span><span class="feeAmount"></span></h2>
+			</div>
+			<hr>
+			<div class='savings'>
+				<span class='savingsOf'></span>:<br>
+				<span class='currencySymbol'></span><span class='discount'></span><br>
+			</div>
+			<div class='pay'>
+				<span class='payVia'></span><br>
+				<span class='type'></span>
+			</div>
+		</div>
+		<hr class='choiceSeparator'>
+		<div class='check button choice'>
+			<div class='titleWrapper'>
+				<h1></h1>
+				<h2><span class="yourFee"></span><span class='currencySymbol'></span><span class="feeAmount"></span></h2>
+			</div>
+			<hr>
+			<div class='savings'>
+				<span class='savingsOf'></span>:<br>
+				<span class='currencySymbol'></span><span class='discount'></span><br>
+			</div>
+			<div class='pay'>
+				<span class='payVia'></span><br>
+				<span class='type'></span>
+			</div>
+		</div>
+		<div class='seqr button choice'>
+			<div class='titleWrapper'>
+				<h1></h1>
+				<h2><span class="yourFee"></span><span class='currencySymbol'></span><span class="feeAmount"></span></h2>
+			</div>
+			<hr>
+			<div class='savings'>
+				<span class='savingsOf'></span>:<br>
+				<span class='currencySymbol'></span><span class='discount'></span><br>
+			</div>
+			<div class='pay'>
+				<span class='payVia'></span><br>
+				<span class='type'></span>
+			</div>
+		</div>
+	</div>
+	<div class='footer'><img class='poweredBy'></div>
+</div></div>
+						<div id="bottomOfForm" class="section"></div>
+						<div id="buttonSection" class="section">
+							<input id="pi_error_message" type="hidden" name="pi_error_message" value="" disabled/>
+							<input id="pi_response_status" type="hidden" name="pi_response_status" value="" />
+							<input id="pi_response_code" type="hidden" name="pi_response_code" value="" />
+							<input id="pt_gateway_account" type="hidden" name="pt_gateway_account" value="" />
+							<input id="pt_magstripe" type="hidden" name="pt_magstripe" value="" />
+							<input id="pt_magensa" type="hidden" name="pt_magensa" value="" />
+							<input id="pt_device_serial_number" type="hidden" name="pt_device_serial_number" value="" />
+							<input id="pt_encryption_track_1" type="hidden" name="pt_encryption_track_1" value="" />
+							<input id="pt_encryption_track_2" type="hidden" name="pt_encryption_track_2" value="" />
+							<input id="pt_encryption_track_3" type="hidden" name="pt_encryption_track_3" value="" />
+							<input id="pt_ksn" type="hidden" name="pt_ksn" value="" />
+							<input id="pt_magne_print_status" type="hidden" name="pt_magne_print_status" value="" />
+							<input id="pt_encryption_magne_print" type="hidden" name="pt_encryption_magne_print" value="" />
+							<input id="pb_force_receipt" type="hidden" name="pb_force_receipt" value="" />
+							<input id="pt_order_classifier" type="hidden" name="pt_order_classifier" value="" />
+							<input id="pt_pre_transaction_balance" type="hidden" name="pt_pre_transaction_balance" value="" />
+							<input id="pd_transaction_payment_type" type="hidden" name="pd_transaction_payment_type" value="" />
+							<input id="pt_authorization_type" type="hidden" name="pt_authorization_type" value="" />
+							<input id="pt_is_business_account" type="hidden" name="pt_is_business_account" value="" />
+							<input id="pd_display_items" type="hidden" name="pd_display_items" value="" />
+							<input id="pt_payment_session" type="hidden" name="pt_payment_session" value="98B4D05600663A60DCC711E5B62CB5FE63C85C4C825" />
+							<input id="pb_bad_card_url" type="hidden" name="pb_bad_card_url" value="" />
+							<input id="pb_problem_url" type="hidden" name="pb_problem_url" value="" />
+							<input id="pb_success_url" type="hidden" name="pb_success_url" value="" />
+							<input id="pb_transition_type"  type="hidden" name="pb_transition_type"  value="" />
+							<input id="pb_transition_template"  type="hidden" name="pb_transition_template"  value="" />
+							<input id="pt_transaction_flags" type="hidden" name="pt_transaction_flags" value="" />
+							<input id="pt_transaction_hash"  type="hidden" name="pt_transaction_hash"  value="" />
+							<input id="pt_transaction_time"  type="hidden" name="pt_transaction_time"  value="" />
+							<input id="pt_tax_amount"  type="hidden" name="pt_tax_amount"  value="" />
+							<input id="pt_tax_rate"  type="hidden" name="pt_tax_rate"  value="" />
+							<input id="pb_receipt_type" type="hidden" name="pb_receipt_type" value="" />
+							<input id="pr_balance" type="hidden" name="pr_balance" value="" />
+							<input id="pr_plan_id" type="hidden" name="pr_plan_id" value="" />
+							<input id="pr_can_renew" type="hidden" name="pr_can_renew" value="" />
+							<input id="pr_validate_card" type="hidden" name="pr_validate_card" value="" />
+							<input id="pr_billing_cycle" type="hidden" name="pr_billing_cycle" value="" />
+							<input id="pr_recurring_amount" type="hidden" name="pr_recurring_amount" value="" />
+							<input id="pr_is_recurring" type="hidden" name="pr_is_recurring" value="" />
+							<input id="pr_is_initial" type="hidden" name="pr_is_initial" value="" />
+							<input id="pb_avs_only" type="hidden" name="pb_avs_only" value="" />
+							<input id="pb_allow_partial" type="hidden" name="pb_allow_partial" value="" />
+							<input id="pb_post_auth" type="hidden" name="pb_post_auth" value="" />
+							<input id="pr_password_hashing_method" type="hidden" name="pr_password_hashing_method" value="" />
+							<input id="pr_minutes_before_first_billed" type="hidden" name="pr_minutes_before_first_billed" value="" />
+							<input id="pr_days_before_first_billed" type="hidden" name="pr_days_before_first_billed" value="" />
+							<input id="pr_months_before_first_billed" type="hidden" name="pr_months_before_first_billed" value="" />
+							<input id="pb_duplicate_check_window" type="hidden" name="pb_duplicate_check_window" value="" />
+							<input id="pb_ignore_fraud_response" type="hidden" name="pb_ignore_fraud_response" value="" />
+							<input id="pb_receipt_country" type="hidden" name="pb_receipt_country" value="" />
+							<input id="pd_shipping_policy_url" type="hidden" name="pd_shipping_policy_url" value="" />
+							<input id="pm_username" type="hidden" name="pm_username" value="" />
+							<input id="pt_billing_fax_number" type="hidden" name="pt_billing_fax_number" value="" />
+							<input id="pt_bin" type="hidden" name="pt_bin" value="" />
+							<input id="pt_card_type" type="hidden" name="pt_card_type" value="" />
+							<input id="pt_currency" type="hidden" name="pt_currency" value="" />
+							<input id="pt_customer_username" type="hidden" name="pt_customer_username" value="" />
+							<input id="pt_ip_address" type="hidden" name="pt_ip_address" value="" />
+							<input id="pt_convenience_fee_amount" type="hidden" name="pt_convenience_fee_amount" value="" />
+							<input id="pa_version" type="hidden" name="pa_version" value="" />
+							<input id="pb_automatically_print_receipt" type="hidden" name="pb_automatically_print_receipt" value="" />
+							<input id="pb_transaction_routing" type="hidden" name="pb_transaction_routing" value="" />
+							<input id="pb_transaction_routing_balance" type="hidden" name="pb_transaction_routing_balance" value="" />
+							<input id="pb_cards_allowed" type="hidden" name="pb_cards_allowed" value="" />
+							<input id="pb_confirmation_sending_email_address" type="hidden" name="pb_confirmation_sending_email_address" value="" />
+							<input id="pb_customer_password" type="hidden" name="pb_customer_password" value="" />
+							<input id="pb_customer_password_confirmation" type="hidden" name="pb_customer_password_confirmation" value="" />
+							<input id="pb_dcc_type" type="hidden" name="pb_dcc_type" value="" />
+							<input id="pb_override_adjustment" type="hidden" name="pb_override_adjustment" value="" />
+							<input id="pb_ignore_security_code_response" type="hidden" name="pb_ignore_security_code_response" value="" />
+							<input id="pb_receipt_address_1" type="hidden" name="pb_receipt_address_1" value="" />
+							<input id="pb_receipt_address_2" type="hidden" name="pb_receipt_address_2" value="" />
+							<input id="pb_receipt_city" type="hidden" name="pb_receipt_city" value="" />
+							<input id="pb_receipt_company" type="hidden" name="pb_receipt_company" value="" />
+							<input id="pb_receipt_company_url" type="hidden" name="pb_receipt_company_url" value="" />
+							<input id="pb_receipt_email_address" type="hidden" name="pb_receipt_email_address" value="" />
+							<input id="pb_receipt_fax" type="hidden" name="pb_receipt_fax" value="" />
+							<input id="pb_receipt_name" type="hidden" name="pb_receipt_name" value="" />
+							<input id="pb_receipt_phone" type="hidden" name="pb_receipt_phone" value="" />
+							<input id="pb_receipt_postal_code" type="hidden" name="pb_receipt_postal_code" value="" />
+							<input id="pb_receipt_province" type="hidden" name="pb_receipt_province" value="" />
+							<input id="pb_receipt_state" type="hidden" name="pb_receipt_state" value="" />
+							<input id="pb_receipt_transaction_url" type="hidden" name="pb_receipt_transaction_url" value="" />
+							<input id="pb_remote_session" type="hidden" name="pb_remote_session" value="" />
+							<input id="pb_response_message_type" type="hidden" name="pb_response_message_type" value="" />
+							<input id="pb_response_parse_type" type="hidden" name="pb_response_parse_type" value="" />
+							<input id="pb_response_url" type="hidden" name="pb_response_url" value="" />
+							<input id="pd_collect_company" type="hidden" name="pd_collect_company" value="" />
+							<input id="pd_collect_credentials" type="hidden" name="pd_collect_credentials" value="" />
+							<input id="pd_collect_shipping_information" type="hidden" name="pd_collect_shipping_information" value="" />
+							<input id="pd_collect_ssn" type="hidden" name="pd_collect_ssn" value="" />
+							<input id="pd_collect_ssn_verification" type="hidden" name="pd_collect_ssn_verification" value="" />
+							<input id="pd_collect_title" type="hidden" name="pd_collect_title" value="" />
+							<input id="pd_content_privacy_statement" type="hidden" name="pd_content_privacy_statement" value="" />
+							<input id="pd_content_privacy_url" type="hidden" name="pd_content_privacy_url" value="" />
+							<input id="pd_content_return_url" type="hidden" name="pd_content_return_url" value="" />
+							<input id="pd_currency_symbol" type="hidden" name="pd_currency_symbol" value="" />
+							<input id="pd_language" type="hidden" name="pd_language" value="" />
+							<input id="pt_ach_check_number" type="hidden" name="pt_ach_check_number" value="" />
+							<input id="pt_avs_level" type="hidden" name="pt_avs_level" value="" />
+							<input id="pt_card_is_present" type="hidden" name="pt_card_is_present" value="" />
+							<input id="pt_card_issue_number" type="hidden" name="pt_card_issue_number" value="" />
+							<input id="pt_card_magensa" type="hidden" name="pt_card_magensa" value="" />
+							<input id="pt_card_magstripe" type="hidden" name="pt_card_magstripe" value="" />
+							<input id="pt_card_start_date" type="hidden" name="pt_card_start_date" value="" />
+							<input id="pt_client_identifier" type="hidden" name="pt_client_identifier" value="" />
+							<input id="pt_gift_card_number" type="hidden" name="pt_gift_card_number" value="" />
+							<input id="pt_gift_card_security_code" type="hidden" name="pt_gift_card_security_code" value="" />
+							<input id="pt_handling_amount" type="hidden" name="pt_handling_amount" value="" />
+							<input id="pt_is_retail_transaction" type="hidden" name="pt_is_retail_transaction" value="" />
+							<input id="pt_order_id" type="hidden" name="pt_order_id" value="" />
+							<input id="pt_shipping_amount" type="hidden" name="pt_shipping_amount" value="" />
+							<input id="pt_shipping_company" type="hidden" name="pt_shipping_company" value="" />
+							<input id="pt_shipping_email_address" type="hidden" name="pt_shipping_email_address" value="" />
+							<input id="pt_shipping_phone_number" type="hidden" name="pt_shipping_phone_number" value="" />
+							<input id="pt_tax_rates" type="hidden" name="pt_tax_rates" value="" />
+							<input id="pt_tax_state" type="hidden" name="pt_tax_state" value="" />
+							<input id="pt_transaction_type" type="hidden" name="pt_transaction_type" value="" />
+							<input id="pt_surcharge_amount" type="hidden" name="pt_surcharge_amount" value="" />
+							<input id="pt_discount_amount" type="hidden" name="pt_discount_amount" value="" />
+							<input id="pd_javascript_template" type="hidden" name="pd_javascript_template" value="" />
+							<input id="pd_css_template" type="hidden" name="pd_css_template" value="" />
+							<input id="pb_tds" type="hidden" name="pb_tds" value="" />
+							<input id="pt_agree_to_terms" type="hidden" name="pt_agree_to_terms" value="" />
+							<input id="pt_transaction_payment_type_selectable" type="hidden" name="pt_transaction_payment_type_selectable" value="" />
+							<input id="pb_remote_session_timeout" type="hidden" name="pb_remote_session_timeout" value="" />
+							<input id="pb_store_data_only" type="hidden" name="pb_store_data_only" value="" />
+
+							<ul>
+								<li><span class="input"><button id="submitButton" type="submit" class="button">Submit</button></li>
+							</ul>
+							<div class='clear'></div>
+						</div>
+						<div style="clear: both"></div>
+					</form>
+				</div>
+
+				
+			</div>
+		</div>
+	</body>
+</html>

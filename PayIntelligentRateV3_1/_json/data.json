@@ -1,0 +1,2482 @@
+{
+    "visible": {
+        "purchasecard": {
+            "pt_purchase_order_number": "1"
+        },
+        "seqr": {
+            "pt_card_security_code": "0",
+            "pt_card_number": "0",
+            "billingInformationSection": "0",
+            "pt_payment_name": "0",
+            "pt_card_expiration_month": "0",
+            "pt_card_expiration_year": "0"
+        },
+        "swipe": {
+            "pt_billing_address_2": "0",
+            "pt_billing_country": "0",
+            "pt_billing_province": "0",
+            "pt_billing_city": "0",
+            "pt_billing_name": "0",
+            "billingInformationSection": "0",
+            "pt_billing_state": "0",
+            "pt_billing_postal_code": "0",
+            "pt_billing_email_address": "0",
+            "pt_billing_phone_number": "0",
+            "pt_billing_address_1": "0"
+        },
+        "ach": {
+            "pt_ach_account_type": "1",
+            "pt_payment_last_name": "1",
+            "pt_card_expiration_month": "0",
+            "pt_ach_routing_number": "1",
+            "pt_card_expiration_year": "0",
+            "pt_ach_account_class": "1",
+            "pt_card_number": "0",
+            "pt_card_security_code": "0",
+            "pt_ach_account_number": "1",
+            "pt_ach_sec_code": "0",
+            "pt_payment_name": "0",
+            "pt_payment_first_name": "1"
+        },
+        "all": {
+            "pt_billing_company": "0",
+            "pt_card_expiration_month": "1",
+            "pt_ach_routing_number": "0",
+            "pt_account_code_1": "0",
+            "pt_billing_name": "0",
+            "pt_card_expiration": "0",
+            "billingInformationSection": "1",
+            "pt_billing_last_name": "0",
+            "pt_transaction_amount": "1",
+            "pt_account_code_3": "0",
+            "pt_ach_sec_code": "0",
+            "pt_billing_address_1": "1",
+            "pt_account_code_2": "0",
+            "pt_billing_first_name": "0",
+            "pt_payment_last_name": "0",
+            "pt_billing_city": "1",
+            "pt_ach_account_class": "0",
+            "pt_ach_account_number": "0",
+            "pt_authorization_code": "0",
+            "pt_shipping_first_name": "0",
+            "pt_billing_state": "1",
+            "pt_payment_first_name": "0",
+            "pt_payment_name": "1",
+            "pt_billing_email_address": "1",
+            "pt_purchase_order_number": "0",
+            "pt_ach_account_type": "0",
+            "pt_ach_acquisition_method": "0",
+            "pt_tax_amount": "0",
+            "pt_card_expiration_year": "1",
+            "pt_card_number": "1",
+            "pt_card_security_code": "1",
+            "pt_customer_username": "0",
+            "pt_customer_comments": "0",
+            "pt_shipping_last_name": "0",
+            "shippingInformationSection": "0",
+            "pt_billing_postal_code": "1",
+            "pt_order_classifier": "0"
+        }
+    },
+    "required": {
+        "purchasecard": {
+            "pt_purchase_order_number": "0"
+        },
+        "seqr": {
+            "pt_card_security_code": "0",
+            "pt_card_number": "0",
+            "billingInformationSection": "0",
+            "pt_payment_name": "0",
+            "pt_card_expiration_month": "0",
+            "pt_card_expiration_year": "0"
+        },
+        "swipe": {
+            "pt_billing_address_2": "0",
+            "pt_billing_country": "0",
+            "pt_billing_province": "0",
+            "pt_billing_city": "0",
+            "pt_billing_name": "0",
+            "billingInformationSection": "0",
+            "pt_billing_state": "0",
+            "pt_billing_postal_code": "0",
+            "pt_billing_email_address": "0",
+            "pt_billing_phone_number": "0",
+            "pt_billing_address_1": "0"
+        },
+        "ach": {
+            "pt_ach_account_type": "1",
+            "pt_payment_last_name": "1",
+            "pt_card_expiration_month": "0",
+            "pt_ach_routing_number": "1",
+            "pt_card_expiration_year": "0",
+            "pt_ach_account_class": "1",
+            "pt_card_number": "0",
+            "pt_card_security_code": "0",
+            "pt_ach_account_number": "1",
+            "pt_ach_sec_code": "1",
+            "pt_payment_name": "0",
+            "pt_payment_first_name": "1"
+        },
+        "all": {
+            "pt_billing_company": "0",
+            "pt_card_expiration_month": "1",
+            "pt_ach_routing_number": "1",
+            "pt_account_code_1": "0",
+            "pt_billing_name": "0",
+            "pt_card_expiration": "0",
+            "billingInformationSection": "0",
+            "pt_billing_last_name": "0",
+            "pt_transaction_amount": "1",
+            "pt_account_code_3": "0",
+            "pt_ach_sec_code": "0",
+            "pt_billing_address_1": "1",
+            "pt_account_code_2": "0",
+            "pt_billing_first_name": "0",
+            "pt_payment_last_name": "0",
+            "pt_billing_city": "1",
+            "pt_ach_account_class": "0",
+            "pt_ach_account_number": "1",
+            "pt_authorization_code": "0",
+            "pt_shipping_first_name": "0",
+            "pt_billing_state": "1",
+            "pt_payment_first_name": "0",
+            "pt_payment_name": "1",
+            "pt_billing_email_address": "1",
+            "pt_purchase_order_number": "0",
+            "pt_ach_account_type": "0",
+            "pt_ach_acquisition_method": "0",
+            "pt_tax_amount": "0",
+            "pt_card_expiration_year": "1",
+            "pt_card_number": "1",
+            "pt_card_security_code": "1",
+            "pt_customer_username": "0",
+            "pt_customer_comments": "0",
+            "pt_shipping_last_name": "0",
+            "shippingInformationSection": "0",
+            "pt_billing_postal_code": "1",
+            "pt_order_classifier": "0"
+        }
+    },
+    "template": null,
+    "text": {
+        "": {
+            "#pt_billing_state .label:nth-child(2)": {
+                "text": null
+            },
+            "#paymentOptions h1": {
+                "text": null
+            }
+        },
+        "all": {
+            "#vff div.check span.type": {
+                "text": "Check"
+            },
+            "#pt_ach_routing_number .label": {
+                "text": "Routing #"
+            },
+            "#pt_purchase_order_number .label": {
+                "text": "Purchase Order Number"
+            },
+            "#pt_ach_check_type .label": {
+                "text": "Check Type"
+            },
+            "#instantchoice div.header span.infoText2": {
+                "text": "Debit cards and eChecks have the lowest associated ETC. By donating via a  debit card or eCheck,  you are helping us reduce the net cost of accepting your donation. "
+            },
+            "#pb_receipt_type .no_printer": {
+                "text": "None"
+            },
+            "#vff div.debit h1": {
+                "text": "Choose to pay with Debit Card"
+            },
+            "#pt_shipping_first_name .label": {
+                "text": "First Name"
+            },
+            "#instantdiscount div.check span.type": {
+                "text": "Check"
+            },
+            "#pt_shipping_city .label": {
+                "text": "City"
+            },
+            "#surcharge div.debit h1": {
+                "text": "Choose to pay with Debit"
+            },
+            "span.infoButton": {
+                "text": "i"
+            },
+            "#instantdiscount div.choice span.potentialTotal": {
+                "text": "Your total could be"
+            },
+            "#itemizationSection .header span.item_tax": {
+                "text": "Tax"
+            },
+            "#pt_billing_company .label": {
+                "text": "Company"
+            },
+            "#surcharge #totalWithSurcharge .label": {
+                "text": "Total"
+            },
+            "#pt_billing_country .label": {
+                "text": "Country"
+            },
+            "#instantchoice div.button span.payVia": {
+                "text": "Pay via"
+            },
+            "#instantdiscount .check .secondAmountLabel": {
+                "text": null
+            },
+            "#vff .buttons .check h2 .yourFee": {
+                "text": null
+            },
+            "#pt_shipping_postal_code .label": {
+                "text": "Zip/Postal Code"
+            },
+            "#pt_authorization_code .label": {
+                "text": "Auth Code"
+            },
+            ".requiredMarker": {
+                "text": "*"
+            },
+            "#pb_receipt_type .standard_printer": {
+                "text": "Standard Printer"
+            },
+            "#convenienceFeeAmount .label": {
+                "text": "Convenience Fee"
+            },
+            "#pt_shipping_province .label": {
+                "text": "Province (Outside US/Canada)"
+            },
+            "#modeSelectionSection h1": {
+                "text": null
+            },
+            "#surcharge div.check span.type": {
+                "text": "Check"
+            },
+            "#vff .buttons .debit h2 .yourFee": {
+                "text": null
+            },
+            "#chargeModelSection div.seqr span.type": {
+                "text": "SEQR"
+            },
+            "#instantdiscount .debit .firstAmountLabel": {
+                "text": null
+            },
+            "#instantchoice div.button span.increaseOf": {
+                "text": "Increase of"
+            },
+            "#pt_shipping_last_name .label": {
+                "text": "Last Name"
+            },
+            "#chargeModelSection div.credit h1": {
+                "text": "Choose to pay with Credit"
+            },
+            "#itemizationSection .header span.item_extended_cost": {
+                "text": "Extended Cost"
+            },
+            "#pt_ach_account_type .checking": {
+                "text": "Checking"
+            },
+            "#instantdiscount div.debit span.choose": {
+                "text": "Choose to pay with a Debit Card"
+            },
+            "#instantdiscount div.debit span.type": {
+                "text": "Debit"
+            },
+            "#chargeModelSection instantdiscount div.debit h1": {
+                "text": "Choose to pay with Debit"
+            },
+            "#instantchoice div.button.check span.type": {
+                "text": "Check"
+            },
+            "#paymentInformationSection h1": {
+                "text": "Payment Information"
+            },
+            "#pt_ach_account_class .label": {
+                "text": "Account Class"
+            },
+            "#instantdiscount div .savings .savingsOf": {
+                "text": "Savings of"
+            },
+            "#itemizationSection .header span.item_description": {
+                "text": "Description"
+            },
+            "#total_with_surcharge .label": {
+                "text": null
+            },
+            "#pt_shipping_address_2 .label": {
+                "text": "Address (Line 2)"
+            },
+            "#vff .buttons > h1 span.yourFee": {
+                "text": "Your Intelligent Rate will be calculated after the first 9 digits of your card number have been entered."
+            },
+            "#vff div.button span.payVia": {
+                "text": "Pay via"
+            },
+            "#convenienceFee .convenienceFeeSection h1": {
+                "text": null
+            },
+            "#pt_billing_province .label": {
+                "text": "Province (Outside US/Canada)"
+            },
+            "#surcharge .surchargeSection h1": {
+                "text": "Surcharge"
+            },
+            "#pt_customer_username .label": {
+                "text": "Username"
+            },
+            "#pt_shipping_name .label": {
+                "text": "Name"
+            },
+            "#instantdiscount .debit .secondAmountLabel": {
+                "text": null
+            },
+            "#surcharge #surchargeAmount .label": {
+                "text": "Surcharge"
+            },
+            "#pt_card_expiration_month .label": {
+                "text": "Exp Month"
+            },
+            "#surcharge .buttons .check h2 .yourFee": {
+                "text": null
+            },
+            "#pt_billing_city .label": {
+                "text": "City"
+            },
+            "#pt_billing_address_1 .label": {
+                "text": "Address"
+            },
+            "#pt_billing_postal_code .label": {
+                "text": "Zip/Postal Code"
+            },
+            "#vff div.button span.savingsOf": {
+                "text": "Savings of"
+            },
+            "#pt_account_code_1 .label": {
+                "text": "Account Code"
+            },
+            "#pt_account_code_2 .label": {
+                "text": "Purchase Descr."
+            },
+            "#surcharge div.debit span.type": {
+                "text": "Debit"
+            },
+            "#instantchoice div.button.check h2": {
+                "text": null
+            },
+            "#surcharge_amount .label": {
+                "text": null
+            },
+            "#shippingInformationSection h1": {
+                "text": "Shipping Address"
+            },
+            "#pb_client .label": {
+                "text": "Currency Conversion"
+            },
+            "#instantchoice div.button.debit h2": {
+                "text": null
+            },
+            "#pt_authorization_type .label": {
+                "text": "Post Authorization"
+            },
+            "#pb_receipt_type .receipt_printer": {
+                "text": "Receipt Printer"
+            },
+            "#surcharge div.check h1": {
+                "text": "Choose to pay with eCheck"
+            },
+            "#instantdiscount .buttons .check h1": {
+                "text": "Choose to pay with eCheck"
+            },
+            "#pt_customer_comments .label": {
+                "text": "Comments"
+            },
+            "#chargeModelSection div.seqr h1": {
+                "text": "Choose to pay with SEQR"
+            },
+            "#itemizationSection .header span.item_identifier": {
+                "text": "SKU"
+            },
+            "#pt_transaction_amount .label": {
+                "text": "Amount"
+            },
+            "#vff div.debit span.type": {
+                "text": "Debit"
+            },
+            "#surcharge .buttons .debit h2 .yourFee": {
+                "text": null
+            },
+            "#vff .buttons .check h1": {
+                "text": null
+            },
+            "#chargeModelSection #instantdiscount div.debit h1": {
+                "text": "Choose to pay with Debit"
+            },
+            "#pt_ach_account_type .label": {
+                "text": "Account Type"
+            },
+            "#vff .checkboxDiv .amountLabel": {
+                "text": null
+            },
+            "#vff_amount .label": {
+                "text": null
+            },
+            "#pt_ach_account_class .business": {
+                "text": "Business"
+            },
+            "#pt_ach_check_type .checking": {
+                "text": "Checking"
+            },
+            "#vff_amount .description": {
+                "text": "The amount of the Intelligent Rate will be calculated when the first six digits of the card are entered."
+            },
+            "#surcharge .checkboxDiv .amountLabel": {
+                "text": null
+            },
+            "#pt_card_number .label": {
+                "text": "Card Number"
+            },
+            "#pt_payment_name .label": {
+                "text": "Name"
+            },
+            "#pt_ach_account_number .label": {
+                "text": "Account #"
+            },
+            "#surcharge .totalSection h1": {
+                "text": "Total Payment"
+            },
+            "#pt_payment_first_name .label": {
+                "text": "First Name"
+            },
+            "#instantchoice div.button h1": {
+                "text": "Increase the NET amount of YOUR donation"
+            },
+            "#itemizationSection .header span.item_cost": {
+                "text": "Cost"
+            },
+            "#surcharge div.button span.payVia": {
+                "text": "Pay via"
+            },
+            "#instantchoice div.header span.infoText1": {
+                "text": "Businesses are charged a combination of processing fees (aka electronic  transaction costs or ETC) to accept credit and debit cards or eChecks.  "
+            },
+            "#surcharge div.button span.savingsOf": {
+                "text": "Savings of"
+            },
+            "#header h1": {
+                "text": null
+            },
+            "#vff > h1 span.yourFee": {
+                "text": "Your Intelligent Rate will be calculated after the first 9 digits of your card number have been entered."
+            },
+            "#convenienceFee .totalSection h1": {
+                "text": null
+            },
+            "#pt_transaction_type .label": {
+                "text": "Mode"
+            },
+            "#instantdiscount .buttons .debit h1": {
+                "text": null
+            },
+            "#billingInformationSection h1": {
+                "text": "Billing Address"
+            },
+            "#instantdiscount div.choice span.payVia": {
+                "text": "Pay via"
+            },
+            "#pt_account_code_3 .label": {
+                "text": "Account Code 3"
+            },
+            "#pb_receipt_type .email": {
+                "text": "E-mail"
+            },
+            "#vff div.check h1": {
+                "text": "Choose to pay with eCheck"
+            },
+            "#itemizationSection .header span.item_quantity": {
+                "text": "Quantity"
+            },
+            "#pt_card_expiration_year .label": {
+                "text": "Exp Year"
+            },
+            "#totalWithConvenienceFee .label": {
+                "text": null
+            },
+            "#pb_receipt_type .label:first": {
+                "text": "Receipt Type"
+            },
+            "#itemizationSection span.tax_total": {
+                "text": "Tax"
+            },
+            "#chargeModelSection #instantchoice div.debit h1": {
+                "text": null
+            },
+            "#pt_ach_check_type .savings": {
+                "text": "Savings"
+            },
+            "#surcharge div.button h2 span.yourFee": {
+                "text": "Your fee will be "
+            },
+            "#pt_billing_email_address .label": {
+                "text": "E-mail Address"
+            },
+            "#vff .buttons .debit h1": {
+                "text": "Choose to pay with debit"
+            },
+            "#vff div.button h2 span.yourFee": {
+                "text": "Your fee will be "
+            },
+            "#pt_shipping_email .label": {
+                "text": "E-mail"
+            },
+            "#pt_tax_amount .label": {
+                "text": "Tax"
+            },
+            "#transaction_amount_display .label": {
+                "text": null
+            },
+            "#pt_billing_name .label": {
+                "text": "Name"
+            },
+            "#pt_shipping_state .label": {
+                "text": "State/Province"
+            },
+            "#header h2": {
+                "text": null
+            },
+            "#pt_billing_state .label": {
+                "text": "State/Province"
+            },
+            "#itemizationSection span.grand_total": {
+                "text": "Grand Total"
+            },
+            "#surcharge .buttons > h1 span.yourFee": {
+                "text": null
+            },
+            "#instantdiscount .check .firstAmountLabel": {
+                "text": null
+            },
+            "#pt_payment_last_name .label": {
+                "text": "Last Name"
+            },
+            "#pt_shipping_address_1 .label": {
+                "text": "Address"
+            },
+            "#pt_ach_account_class .personal": {
+                "text": "Personal"
+            },
+            "#instantdiscount .buttons h2 .secondAmountLabel": {
+                "text": "New total will be "
+            },
+            "#pt_card_security_code .label": {
+                "text": "Card CVV/CVC"
+            },
+            "#pt_shipping_country .label": {
+                "text": "Country"
+            },
+            "#chargeModelSection div.credit span.type": {
+                "text": "Credit"
+            },
+            "#pt_billing_phone_number .label": {
+                "text": "Phone Number"
+            },
+            "#pb_automatically_print .label": {
+                "text": "Print Receipt"
+            },
+            "#instantchoice div.header h1": {
+                "text": "Instant Choice"
+            },
+            "#instantchoice div.button.debit span.type": {
+                "text": "Debit"
+            },
+            "#pt_shipping_phone .label": {
+                "text": "Phone Number"
+            },
+            "#itemizationSection .header span.item_extended_cost_with_tax": {
+                "text": "Cost w/ Tax"
+            },
+            "#instantdiscount div.choice span.insteadOf": {
+                "text": "instead of"
+            },
+            "#surcharge_amount .description": {
+                "text": null
+            },
+            "#instantdiscount div.check span.choose": {
+                "text": "Choose to pay via Online Check"
+            },
+            "#instantchoice div.header span.infoText3": {
+                "text": "We  appreciate your donation, please help us retain as much of that donation  as possible!   Thank you!"
+            },
+            "#total_with_vff .label": {
+                "text": null
+            },
+            "#itemizationSection span.extended_cost_total": {
+                "text": "Subtotal"
+            },
+            "#chargeModelSection div.debit h1": {
+                "text": "Choose to pay with Debit"
+            },
+            "#pt_ach_account_type .savings": {
+                "text": "Savings"
+            },
+            "#instantdiscount .header h1": {
+                "text": "Instant Discount"
+            },
+            "#pt_billing_address_2 .label": {
+                "text": "Address (Line 2)"
+            },
+            "#pt_order_id .label": {
+                "text": "Order ID"
+            }
+        }
+    },
+    "countriesAndStates": {
+        "GL": {
+            "commonName": "GREENLAND",
+            "twoLetter": "GL",
+            "numeric": "304",
+            "threeLetter": "GRL"
+        },
+        "DJ": {
+            "commonName": "DJIBOUTI",
+            "twoLetter": "DJ",
+            "numeric": "262",
+            "threeLetter": "DJI"
+        },
+        "JM": {
+            "commonName": "JAMAICA",
+            "twoLetter": "JM",
+            "numeric": "388",
+            "threeLetter": "JAM"
+        },
+        "AT": {
+            "commonName": "AUSTRIA",
+            "twoLetter": "AT",
+            "numeric": "40",
+            "threeLetter": "AUT"
+        },
+        "PG": {
+            "commonName": "PAPUA NEW GUINEA",
+            "twoLetter": "PG",
+            "numeric": "598",
+            "threeLetter": "PNG"
+        },
+        "KI": {
+            "commonName": "KIRIBATI",
+            "twoLetter": "KI",
+            "numeric": "296",
+            "threeLetter": "KIR"
+        },
+        "SZ": {
+            "commonName": "SWAZILAND",
+            "twoLetter": "SZ",
+            "numeric": "748",
+            "threeLetter": "SWZ"
+        },
+        "YT": {
+            "commonName": "MAYOTTE",
+            "twoLetter": "YT",
+            "numeric": "175",
+            "threeLetter": "MYT"
+        },
+        "BN": {
+            "commonName": "BRUNEI",
+            "twoLetter": "BN",
+            "numeric": "96",
+            "threeLetter": "BRN"
+        },
+        "CD": {
+            "commonName": "CONGO, THE DEMOCRATIC REPUBLIC OF THE",
+            "twoLetter": "CD",
+            "numeric": "180",
+            "threeLetter": "COD"
+        },
+        "ZM": {
+            "commonName": "ZAMBIA",
+            "twoLetter": "ZM",
+            "numeric": "894",
+            "threeLetter": "ZMB"
+        },
+        "AO": {
+            "commonName": "ANGOLA",
+            "twoLetter": "AO",
+            "numeric": "24",
+            "threeLetter": "AGO"
+        },
+        "BW": {
+            "commonName": "BOTSWANA",
+            "twoLetter": "BW",
+            "numeric": "72",
+            "threeLetter": "BWA"
+        },
+        "ZW": {
+            "commonName": "ZIMBABWE",
+            "twoLetter": "ZW",
+            "numeric": "716",
+            "threeLetter": "ZWE"
+        },
+        "VC": {
+            "commonName": "SAINT VINCENT AND THE GRENADINES",
+            "twoLetter": "VC",
+            "numeric": "670",
+            "threeLetter": "VCT"
+        },
+        "PR": {
+            "commonName": "PUERTO RICO",
+            "twoLetter": "PR",
+            "states": {
+                "PR": {
+                    "state_name": "Puerto Rico"
+                }
+            },
+            "numeric": "630",
+            "threeLetter": "PRI"
+        },
+        "JP": {
+            "commonName": "JAPAN",
+            "twoLetter": "JP",
+            "numeric": "392",
+            "threeLetter": "JPN"
+        },
+        "NA": {
+            "commonName": "NAMIBIA",
+            "twoLetter": "NA",
+            "numeric": "516",
+            "threeLetter": "NAM"
+        },
+        "SH": {
+            "commonName": "SAINT HELENA",
+            "twoLetter": "SH",
+            "numeric": "654",
+            "threeLetter": "SHN"
+        },
+        "TJ": {
+            "commonName": "TAJIKISTAN",
+            "twoLetter": "TJ",
+            "numeric": "762",
+            "threeLetter": "TJK"
+        },
+        "LC": {
+            "commonName": "SAINT LUCIA",
+            "twoLetter": "LC",
+            "numeric": "662",
+            "threeLetter": "LCA"
+        },
+        "MA": {
+            "commonName": "MOROCCO",
+            "twoLetter": "MA",
+            "numeric": "504",
+            "threeLetter": "MAR"
+        },
+        "SV": {
+            "commonName": "EL SALVADOR",
+            "twoLetter": "SV",
+            "numeric": "222",
+            "threeLetter": "SLV"
+        },
+        "MT": {
+            "commonName": "MALTA",
+            "twoLetter": "MT",
+            "numeric": "470",
+            "threeLetter": "MLT"
+        },
+        "VU": {
+            "commonName": "VANUATU",
+            "twoLetter": "VU",
+            "numeric": "548",
+            "threeLetter": "VUT"
+        },
+        "MN": {
+            "commonName": "MONGOLIA",
+            "twoLetter": "MN",
+            "numeric": "496",
+            "threeLetter": "MNG"
+        },
+        "MP": {
+            "commonName": "NORTHERN MARIANA ISLANDS",
+            "twoLetter": "MP",
+            "states": {
+                "MP": {
+                    "state_name": "Northern Mariana Islands"
+                }
+            },
+            "numeric": "580",
+            "threeLetter": "MNP"
+        },
+        "IT": {
+            "commonName": "ITALY",
+            "twoLetter": "IT",
+            "numeric": "380",
+            "threeLetter": "ITA"
+        },
+        "RE": {
+            "commonName": "REUNION",
+            "twoLetter": "RE",
+            "numeric": "638",
+            "threeLetter": "REU"
+        },
+        "WS": {
+            "commonName": "SAMOA",
+            "twoLetter": "WS",
+            "numeric": "882",
+            "threeLetter": "WSM"
+        },
+        "FR": {
+            "commonName": "FRANCE",
+            "twoLetter": "FR",
+            "numeric": "250",
+            "threeLetter": "FRA"
+        },
+        "CW": {
+            "commonName": "CURACAO",
+            "twoLetter": "CW",
+            "numeric": "531",
+            "threeLetter": "CUW"
+        },
+        "EG": {
+            "commonName": "EGYPT",
+            "twoLetter": "EG",
+            "numeric": "818",
+            "threeLetter": "EGY"
+        },
+        "PW": {
+            "commonName": "PALAU",
+            "twoLetter": "PW",
+            "states": {
+                "PW": {
+                    "state_name": "Palau"
+                }
+            },
+            "numeric": "585",
+            "threeLetter": "PLW"
+        },
+        "UZ": {
+            "commonName": "UZBEKISTAN",
+            "twoLetter": "UZ",
+            "numeric": "860",
+            "threeLetter": "UZB"
+        },
+        "LR": {
+            "commonName": "LIBERIA",
+            "twoLetter": "LR",
+            "numeric": "430",
+            "threeLetter": "LBR"
+        },
+        "TK": {
+            "commonName": "TOKELAU",
+            "twoLetter": "TK",
+            "numeric": "772",
+            "threeLetter": "TKL"
+        },
+        "RW": {
+            "commonName": "RWANDA",
+            "twoLetter": "RW",
+            "numeric": "646",
+            "threeLetter": "RWA"
+        },
+        "BE": {
+            "commonName": "BELGIUM",
+            "twoLetter": "BE",
+            "numeric": "56",
+            "threeLetter": "BEL"
+        },
+        "UM": {
+            "commonName": "UNITED STATES MINOR OUTLYING ISLANDS",
+            "twoLetter": "UM",
+            "numeric": "581",
+            "threeLetter": "UMI"
+        },
+        "TN": {
+            "commonName": "TUNISIA",
+            "twoLetter": "TN",
+            "numeric": "788",
+            "threeLetter": "TUN"
+        },
+        "EE": {
+            "commonName": "ESTONIA",
+            "twoLetter": "EE",
+            "numeric": "233",
+            "threeLetter": "EST"
+        },
+        "CK": {
+            "commonName": "COOK ISLANDS",
+            "twoLetter": "CK",
+            "numeric": "184",
+            "threeLetter": "COK"
+        },
+        "BY": {
+            "commonName": "BELARUS",
+            "twoLetter": "BY",
+            "numeric": "112",
+            "threeLetter": "BLR"
+        },
+        "KR": {
+            "commonName": "KOREA, REPUBLIC OF",
+            "twoLetter": "KR",
+            "numeric": "410",
+            "threeLetter": "KOR"
+        },
+        "LS": {
+            "commonName": "LESOTHO",
+            "twoLetter": "LS",
+            "numeric": "426",
+            "threeLetter": "LSO"
+        },
+        "NO": {
+            "commonName": "NORWAY",
+            "twoLetter": "NO",
+            "numeric": "578",
+            "threeLetter": "NOR"
+        },
+        "SA": {
+            "commonName": "SAUDI ARABIA",
+            "twoLetter": "SA",
+            "numeric": "682",
+            "threeLetter": "SAU"
+        },
+        "ZA": {
+            "commonName": "SOUTH AFRICA",
+            "twoLetter": "ZA",
+            "numeric": "710",
+            "threeLetter": "ZAF"
+        },
+        "PT": {
+            "commonName": "PORTUGAL",
+            "twoLetter": "PT",
+            "numeric": "620",
+            "threeLetter": "PRT"
+        },
+        "BF": {
+            "commonName": "BURKINA FASO",
+            "twoLetter": "BF",
+            "numeric": "854",
+            "threeLetter": "BFA"
+        },
+        "CA": {
+            "commonName": "CANADA",
+            "twoLetter": "CA",
+            "states": {
+                "NT": {
+                    "state_name": "Northwest Territories"
+                },
+                "BC": {
+                    "state_name": "British Columbia"
+                },
+                "ON": {
+                    "state_name": "Ontario"
+                },
+                "NS": {
+                    "state_name": "Nova Scotia"
+                },
+                "MB": {
+                    "state_name": "Manitoba"
+                },
+                "YT": {
+                    "state_name": "Yukon"
+                },
+                "QC": {
+                    "state_name": "Quebec"
+                },
+                "NF": {
+                    "state_name": "Newfoundland"
+                },
+                "NU": {
+                    "state_name": "Nunavut"
+                },
+                "PE": {
+                    "state_name": "Prince Edward Island"
+                },
+                "SK": {
+                    "state_name": "Saskatchewan"
+                },
+                "NB": {
+                    "state_name": "New Brunswick"
+                },
+                "AB": {
+                    "state_name": "Alberta"
+                }
+            },
+            "numeric": "124",
+            "threeLetter": "CAN"
+        },
+        "AM": {
+            "commonName": "ARMENIA",
+            "twoLetter": "AM",
+            "numeric": "51",
+            "threeLetter": "ARM"
+        },
+        "CM": {
+            "commonName": "CAMEROON",
+            "twoLetter": "CM",
+            "numeric": "120",
+            "threeLetter": "CMR"
+        },
+        "MG": {
+            "commonName": "MADAGASCAR",
+            "twoLetter": "MG",
+            "numeric": "450",
+            "threeLetter": "MDG"
+        },
+        "SR": {
+            "commonName": "SURINAME",
+            "twoLetter": "SR",
+            "numeric": "740",
+            "threeLetter": "SUR"
+        },
+        "NP": {
+            "commonName": "NEPAL",
+            "twoLetter": "NP",
+            "numeric": "524",
+            "threeLetter": "NPL"
+        },
+        "BT": {
+            "commonName": "BHUTAN",
+            "twoLetter": "BT",
+            "numeric": "64",
+            "threeLetter": "BTN"
+        },
+        "PL": {
+            "commonName": "POLAND",
+            "twoLetter": "PL",
+            "numeric": "616",
+            "threeLetter": "POL"
+        },
+        "CF": {
+            "commonName": "CENTRAL AFRICAN REPUBLIC",
+            "twoLetter": "CF",
+            "numeric": "140",
+            "threeLetter": "CAF"
+        },
+        "GA": {
+            "commonName": "GABON",
+            "twoLetter": "GA",
+            "numeric": "266",
+            "threeLetter": "GAB"
+        },
+        "TM": {
+            "commonName": "TURKMENISTAN",
+            "twoLetter": "TM",
+            "numeric": "795",
+            "threeLetter": "TKM"
+        },
+        "BA": {
+            "commonName": "BOSNIA AND HERZEGOVINA",
+            "twoLetter": "BA",
+            "numeric": "70",
+            "threeLetter": "BIH"
+        },
+        "AE": {
+            "commonName": "UNITED ARAB EMIRATES",
+            "twoLetter": "AE",
+            "numeric": "784",
+            "threeLetter": "ARE"
+        },
+        "KY": {
+            "commonName": "CAYMAN ISLANDS",
+            "twoLetter": "KY",
+            "numeric": "136",
+            "threeLetter": "CYM"
+        },
+        "TH": {
+            "commonName": "THAILAND",
+            "twoLetter": "TH",
+            "numeric": "764",
+            "threeLetter": "THA"
+        },
+        "LA": {
+            "commonName": "LAOS",
+            "twoLetter": "LA",
+            "numeric": "418",
+            "threeLetter": "LAO"
+        },
+        "CC": {
+            "commonName": "COCOS ISLANDS",
+            "twoLetter": "CC",
+            "numeric": "166",
+            "threeLetter": "CCK"
+        },
+        "PH": {
+            "commonName": "PHILIPPINES",
+            "twoLetter": "PH",
+            "numeric": "608",
+            "threeLetter": "PHL"
+        },
+        "NI": {
+            "commonName": "NICARAGUA",
+            "twoLetter": "NI",
+            "numeric": "558",
+            "threeLetter": "NIC"
+        },
+        "TF": {
+            "commonName": "FRENCH SOUTHERN TERRITORIES",
+            "twoLetter": "TF",
+            "numeric": "260",
+            "threeLetter": "ATF"
+        },
+        "GU": {
+            "commonName": "GUAM",
+            "twoLetter": "GU",
+            "states": {
+                "GU": {
+                    "state_name": "Guam"
+                }
+            },
+            "numeric": "316",
+            "threeLetter": "GUM"
+        },
+        "NC": {
+            "commonName": "NEW CALEDONIA",
+            "twoLetter": "NC",
+            "numeric": "540",
+            "threeLetter": "NCL"
+        },
+        "KZ": {
+            "commonName": "KAZAKHSTAN",
+            "twoLetter": "KZ",
+            "numeric": "398",
+            "threeLetter": "KAZ"
+        },
+        "SJ": {
+            "commonName": "SVALBARD AND JAN MAYEN",
+            "twoLetter": "SJ",
+            "numeric": "744",
+            "threeLetter": "SJM"
+        },
+        "MM": {
+            "commonName": "MYANMAR",
+            "twoLetter": "MM",
+            "numeric": "104",
+            "threeLetter": "MMR"
+        },
+        "NR": {
+            "commonName": "NAURU",
+            "twoLetter": "NR",
+            "numeric": "520",
+            "threeLetter": "NRU"
+        },
+        "DM": {
+            "commonName": "DOMINICA",
+            "twoLetter": "DM",
+            "numeric": "212",
+            "threeLetter": "DMA"
+        },
+        "NE": {
+            "commonName": "NIGER",
+            "twoLetter": "NE",
+            "numeric": "562",
+            "threeLetter": "NER"
+        },
+        "EU": {
+            "commonName": "EUROPEAN UNION",
+            "twoLetter": "EU",
+            "numeric": "978",
+            "threeLetter": "EUR"
+        },
+        "AD": {
+            "commonName": "ANDORRA",
+            "twoLetter": "AD",
+            "numeric": "20",
+            "threeLetter": "AND"
+        },
+        "MR": {
+            "commonName": "MAURITANIA",
+            "twoLetter": "MR",
+            "numeric": "478",
+            "threeLetter": "MRT"
+        },
+        "TO": {
+            "commonName": "TONGA",
+            "twoLetter": "TO",
+            "numeric": "776",
+            "threeLetter": "TON"
+        },
+        "SE": {
+            "commonName": "SWEDEN",
+            "twoLetter": "SE",
+            "numeric": "752",
+            "threeLetter": "SWE"
+        },
+        "AZ": {
+            "commonName": "AZERBAIJAN",
+            "twoLetter": "AZ",
+            "numeric": "31",
+            "threeLetter": "AZE"
+        },
+        "AF": {
+            "commonName": "AFGHANISTAN",
+            "twoLetter": "AF",
+            "numeric": "4",
+            "threeLetter": "AFG"
+        },
+        "GS": {
+            "commonName": "SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS",
+            "twoLetter": "GS",
+            "numeric": "239",
+            "threeLetter": "SGS"
+        },
+        "NG": {
+            "commonName": "NIGERIA",
+            "twoLetter": "NG",
+            "numeric": "566",
+            "threeLetter": "NGA"
+        },
+        "BJ": {
+            "commonName": "BENIN",
+            "twoLetter": "BJ",
+            "numeric": "204",
+            "threeLetter": "BEN"
+        },
+        "KE": {
+            "commonName": "KENYA",
+            "twoLetter": "KE",
+            "numeric": "404",
+            "threeLetter": "KEN"
+        },
+        "ME": {
+            "commonName": "MONTENEGRO",
+            "twoLetter": "ME",
+            "numeric": "499",
+            "threeLetter": "MNE"
+        },
+        "AX": {
+            "commonName": "ALAND ISLANDS",
+            "twoLetter": "AX",
+            "numeric": "248",
+            "threeLetter": "ALA"
+        },
+        "OM": {
+            "commonName": "OMAN",
+            "twoLetter": "OM",
+            "numeric": "512",
+            "threeLetter": "OMN"
+        },
+        "VG": {
+            "commonName": "VIRGIN ISLANDS, BRITISH",
+            "twoLetter": "VG",
+            "numeric": "92",
+            "threeLetter": "VGB"
+        },
+        "VN": {
+            "commonName": "VIETNAM",
+            "twoLetter": "VN",
+            "numeric": "704",
+            "threeLetter": "VNM"
+        },
+        "DZ": {
+            "commonName": "ALGERIA",
+            "twoLetter": "DZ",
+            "numeric": "12",
+            "threeLetter": "DZA"
+        },
+        "CI": {
+            "commonName": "IVORY COAST",
+            "twoLetter": "CI",
+            "numeric": "384",
+            "threeLetter": "CIV"
+        },
+        "YE": {
+            "commonName": "YEMEN",
+            "twoLetter": "YE",
+            "numeric": "887",
+            "threeLetter": "YEM"
+        },
+        "LK": {
+            "commonName": "SRI LANKA",
+            "twoLetter": "LK",
+            "numeric": "144",
+            "threeLetter": "LKA"
+        },
+        "ID": {
+            "commonName": "INDONESIA",
+            "twoLetter": "ID",
+            "numeric": "360",
+            "threeLetter": "IDN"
+        },
+        "FM": {
+            "commonName": "MICRONESIA",
+            "twoLetter": "FM",
+            "states": {
+                "FM": {
+                    "state_name": "Micronesia"
+                }
+            },
+            "numeric": "583",
+            "threeLetter": "FSM"
+        },
+        "GE": {
+            "commonName": "GEORGIA",
+            "twoLetter": "GE",
+            "numeric": "268",
+            "threeLetter": "GEO"
+        },
+        "GM": {
+            "commonName": "GAMBIA",
+            "twoLetter": "GM",
+            "numeric": "270",
+            "threeLetter": "GMB"
+        },
+        "CX": {
+            "commonName": "CHRISTMAS ISLAND",
+            "twoLetter": "CX",
+            "numeric": "162",
+            "threeLetter": "CXR"
+        },
+        "LV": {
+            "commonName": "LATVIA",
+            "twoLetter": "LV",
+            "numeric": "428",
+            "threeLetter": "LVA"
+        },
+        "LB": {
+            "commonName": "LEBANON",
+            "twoLetter": "LB",
+            "numeric": "422",
+            "threeLetter": "LBN"
+        },
+        "RU": {
+            "commonName": "RUSSIAN FEDERATION",
+            "twoLetter": "RU",
+            "numeric": "643",
+            "threeLetter": "RUS"
+        },
+        "FK": {
+            "commonName": "FALKLAND ISLANDS",
+            "twoLetter": "FK",
+            "numeric": "238",
+            "threeLetter": "FLK"
+        },
+        "FI": {
+            "commonName": "FINLAND",
+            "twoLetter": "FI",
+            "numeric": "246",
+            "threeLetter": "FIN"
+        },
+        "DE": {
+            "commonName": "GERMANY",
+            "twoLetter": "DE",
+            "numeric": "276",
+            "threeLetter": "DEU"
+        },
+        "MV": {
+            "commonName": "MALDIVES",
+            "twoLetter": "MV",
+            "numeric": "462",
+            "threeLetter": "MDV"
+        },
+        "LU": {
+            "commonName": "LUXEMBOURG",
+            "twoLetter": "LU",
+            "numeric": "442",
+            "threeLetter": "LUX"
+        },
+        "PN": {
+            "commonName": "PITCAIRN",
+            "twoLetter": "PN",
+            "numeric": "612",
+            "threeLetter": "PCN"
+        },
+        "VE": {
+            "commonName": "VENEZUELA, BOLIVARIAN REPUBLIC OF",
+            "twoLetter": "VE",
+            "numeric": "862",
+            "threeLetter": "VEN"
+        },
+        "BH": {
+            "commonName": "BAHRAIN",
+            "twoLetter": "BH",
+            "numeric": "48",
+            "threeLetter": "BHR"
+        },
+        "GI": {
+            "commonName": "GIBRALTAR",
+            "twoLetter": "GI",
+            "numeric": "292",
+            "threeLetter": "GIB"
+        },
+        "RO": {
+            "commonName": "ROMANIA",
+            "twoLetter": "RO",
+            "numeric": "642",
+            "threeLetter": "ROU"
+        },
+        "WF": {
+            "commonName": "WALLIS AND FUTUNA",
+            "twoLetter": "WF",
+            "numeric": "876",
+            "threeLetter": "WLF"
+        },
+        "AR": {
+            "commonName": "ARGENTINA",
+            "twoLetter": "AR",
+            "numeric": "32",
+            "threeLetter": "ARG"
+        },
+        "GP": {
+            "commonName": "GUADELOUPE",
+            "twoLetter": "GP",
+            "numeric": "312",
+            "threeLetter": "GLP"
+        },
+        "IN": {
+            "commonName": "INDIA",
+            "twoLetter": "IN",
+            "numeric": "356",
+            "threeLetter": "IND"
+        },
+        "TV": {
+            "commonName": "TUVALU",
+            "twoLetter": "TV",
+            "numeric": "798",
+            "threeLetter": "TUV"
+        },
+        "VI": {
+            "commonName": "VIRGIN ISLANDS, U.S.",
+            "twoLetter": "VI",
+            "states": {
+                "VI": {
+                    "state_name": "Virgin Islands"
+                }
+            },
+            "numeric": "850",
+            "threeLetter": "VIR"
+        },
+        "FO": {
+            "commonName": "FAROE ISLANDS",
+            "twoLetter": "FO",
+            "numeric": "234",
+            "threeLetter": "FRO"
+        },
+        "MX": {
+            "commonName": "MEXICO",
+            "twoLetter": "MX",
+            "numeric": "484",
+            "threeLetter": "MEX"
+        },
+        "AW": {
+            "commonName": "ARUBA",
+            "twoLetter": "AW",
+            "numeric": "533",
+            "threeLetter": "ABW"
+        },
+        "SN": {
+            "commonName": "SENEGAL",
+            "twoLetter": "SN",
+            "numeric": "686",
+            "threeLetter": "SEN"
+        },
+        "CS": {
+            "commonName": "SERBIA AND MONTENEGRO",
+            "twoLetter": "CS",
+            "numeric": "891",
+            "threeLetter": "SCG"
+        },
+        "BR": {
+            "commonName": "BRAZIL",
+            "twoLetter": "BR",
+            "numeric": "76",
+            "threeLetter": "BRA"
+        },
+        "HN": {
+            "commonName": "HONDURAS",
+            "twoLetter": "HN",
+            "numeric": "340",
+            "threeLetter": "HND"
+        },
+        "MC": {
+            "commonName": "MONACO",
+            "twoLetter": "MC",
+            "numeric": "492",
+            "threeLetter": "MCO"
+        },
+        "IL": {
+            "commonName": "ISRAEL",
+            "twoLetter": "IL",
+            "numeric": "376",
+            "threeLetter": "ISR"
+        },
+        "GG": {
+            "commonName": "GUERNSEY",
+            "twoLetter": "GG",
+            "numeric": "831",
+            "threeLetter": "GGY"
+        },
+        "SB": {
+            "commonName": "SOLOMON ISLANDS",
+            "twoLetter": "SB",
+            "numeric": "90",
+            "threeLetter": "SLB"
+        },
+        "DO": {
+            "commonName": "DOMINICAN REPUBLIC",
+            "twoLetter": "DO",
+            "numeric": "214",
+            "threeLetter": "DOM"
+        },
+        "PS": {
+            "commonName": "PALESTINIAN TERRITORY",
+            "twoLetter": "PS",
+            "numeric": "275",
+            "threeLetter": "PSE"
+        },
+        "HU": {
+            "commonName": "HUNGARY",
+            "twoLetter": "HU",
+            "numeric": "348",
+            "threeLetter": "HUN"
+        },
+        "NZ": {
+            "commonName": "NEW ZEALAND",
+            "twoLetter": "NZ",
+            "numeric": "554",
+            "threeLetter": "NZL"
+        },
+        "SX": {
+            "commonName": "SINT MAARTEN",
+            "twoLetter": "SX",
+            "numeric": "534",
+            "threeLetter": "SXM"
+        },
+        "UG": {
+            "commonName": "UGANDA",
+            "twoLetter": "UG",
+            "numeric": "800",
+            "threeLetter": "UGA"
+        },
+        "BQ": {
+            "commonName": "BONAIRE, SAINT EUSTATIUS AND SABA ",
+            "twoLetter": "BQ",
+            "numeric": "535",
+            "threeLetter": "BES"
+        },
+        "KH": {
+            "commonName": "CAMBODIA",
+            "twoLetter": "KH",
+            "numeric": "116",
+            "threeLetter": "KHM"
+        },
+        "TG": {
+            "commonName": "TOGO",
+            "twoLetter": "TG",
+            "numeric": "768",
+            "threeLetter": "TGO"
+        },
+        "GB": {
+            "commonName": "UNITED KINGDOM",
+            "twoLetter": "GB",
+            "numeric": "826",
+            "threeLetter": "GBR"
+        },
+        "BB": {
+            "commonName": "BARBADOS",
+            "twoLetter": "BB",
+            "numeric": "52",
+            "threeLetter": "BRB"
+        },
+        "JE": {
+            "commonName": "JERSEY",
+            "twoLetter": "JE",
+            "numeric": "832",
+            "threeLetter": "JEY"
+        },
+        "HT": {
+            "commonName": "HAITI",
+            "twoLetter": "HT",
+            "numeric": "332",
+            "threeLetter": "HTI"
+        },
+        "DK": {
+            "commonName": "DENMARK",
+            "twoLetter": "DK",
+            "numeric": "208",
+            "threeLetter": "DNK"
+        },
+        "PA": {
+            "commonName": "PANAMA",
+            "twoLetter": "PA",
+            "numeric": "591",
+            "threeLetter": "PAN"
+        },
+        "CV": {
+            "commonName": "CAPE VERDE",
+            "twoLetter": "CV",
+            "numeric": "132",
+            "threeLetter": "CPV"
+        },
+        "QA": {
+            "commonName": "QATAR",
+            "twoLetter": "QA",
+            "numeric": "634",
+            "threeLetter": "QAT"
+        },
+        "GD": {
+            "commonName": "GRENADA",
+            "twoLetter": "GD",
+            "numeric": "308",
+            "threeLetter": "GRD"
+        },
+        "SS": {
+            "commonName": "SOUTH SUDAN",
+            "twoLetter": "SS",
+            "numeric": "728",
+            "threeLetter": "SSD"
+        },
+        "GF": {
+            "commonName": "FRENCH GUIANA",
+            "twoLetter": "GF",
+            "numeric": "254",
+            "threeLetter": "GUF"
+        },
+        "MO": {
+            "commonName": "MACAO",
+            "twoLetter": "MO",
+            "numeric": "446",
+            "threeLetter": "MAC"
+        },
+        "ZZ": {
+            "commonName": "Unknown",
+            "twoLetter": "ZZ",
+            "states": {
+                "ZZ": {
+                    "state_name": "Country other than USA or Canada"
+                }
+            },
+            "numeric": "0",
+            "threeLetter": "ZZZ"
+        },
+        "KM": {
+            "commonName": "COMOROS",
+            "twoLetter": "KM",
+            "numeric": "174",
+            "threeLetter": "COM"
+        },
+        "MF": {
+            "commonName": "SAINT MARTIN",
+            "twoLetter": "MF",
+            "numeric": "663",
+            "threeLetter": "MAF"
+        },
+        "KW": {
+            "commonName": "KUWAIT",
+            "twoLetter": "KW",
+            "numeric": "414",
+            "threeLetter": "KWT"
+        },
+        "HR": {
+            "commonName": "CROATIA",
+            "twoLetter": "HR",
+            "numeric": "191",
+            "threeLetter": "HRV"
+        },
+        "MQ": {
+            "commonName": "MARTINIQUE",
+            "twoLetter": "MQ",
+            "numeric": "474",
+            "threeLetter": "MTQ"
+        },
+        "TC": {
+            "commonName": "TURKS AND CAICOS ISLANDS",
+            "twoLetter": "TC",
+            "numeric": "796",
+            "threeLetter": "TCA"
+        },
+        "CZ": {
+            "commonName": "CZECH REPUBLIC",
+            "twoLetter": "CZ",
+            "numeric": "203",
+            "threeLetter": "CZE"
+        },
+        "MZ": {
+            "commonName": "MOZAMBIQUE",
+            "twoLetter": "MZ",
+            "numeric": "508",
+            "threeLetter": "MOZ"
+        },
+        "BL": {
+            "commonName": "SAINT BARTHELEMY",
+            "twoLetter": "BL",
+            "numeric": "652",
+            "threeLetter": "BLM"
+        },
+        "ES": {
+            "commonName": "SPAIN",
+            "twoLetter": "ES",
+            "numeric": "724",
+            "threeLetter": "ESP"
+        },
+        "BO": {
+            "commonName": "BOLIVIA, PLURINATIONAL STATE OF",
+            "twoLetter": "BO",
+            "numeric": "68",
+            "threeLetter": "BOL"
+        },
+        "AU": {
+            "commonName": "AUSTRALIA",
+            "twoLetter": "AU",
+            "numeric": "36",
+            "threeLetter": "AUS"
+        },
+        "ST": {
+            "commonName": "SAO TOME AND PRINCIPE",
+            "twoLetter": "ST",
+            "numeric": "678",
+            "threeLetter": "STP"
+        },
+        "AL": {
+            "commonName": "ALBANIA",
+            "twoLetter": "AL",
+            "numeric": "8",
+            "threeLetter": "ALB"
+        },
+        "IR": {
+            "commonName": "IRAN",
+            "twoLetter": "IR",
+            "numeric": "364",
+            "threeLetter": "IRN"
+        },
+        "CG": {
+            "commonName": "REPUBLIC OF THE CONGO",
+            "twoLetter": "CG",
+            "numeric": "178",
+            "threeLetter": "COG"
+        },
+        "MD": {
+            "commonName": "MOLDOVA, REPUBLIC OF",
+            "twoLetter": "MD",
+            "numeric": "498",
+            "threeLetter": "MDA"
+        },
+        "TR": {
+            "commonName": "TURKEY",
+            "twoLetter": "TR",
+            "numeric": "792",
+            "threeLetter": "TUR"
+        },
+        "GN": {
+            "commonName": "GUINEA",
+            "twoLetter": "GN",
+            "numeric": "324",
+            "threeLetter": "GIN"
+        },
+        "BI": {
+            "commonName": "BURUNDI",
+            "twoLetter": "BI",
+            "numeric": "108",
+            "threeLetter": "BDI"
+        },
+        "GW": {
+            "commonName": "GUINEA-BISSAU",
+            "twoLetter": "GW",
+            "numeric": "624",
+            "threeLetter": "GNB"
+        },
+        "MK": {
+            "commonName": "MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF",
+            "twoLetter": "MK",
+            "numeric": "807",
+            "threeLetter": "MKD"
+        },
+        "GR": {
+            "commonName": "GREECE",
+            "twoLetter": "GR",
+            "numeric": "300",
+            "threeLetter": "GRC"
+        },
+        "AG": {
+            "commonName": "ANTIGUA AND BARBUDA",
+            "twoLetter": "AG",
+            "numeric": "28",
+            "threeLetter": "ATG"
+        },
+        "CO": {
+            "commonName": "COLOMBIA",
+            "twoLetter": "CO",
+            "numeric": "170",
+            "threeLetter": "COL"
+        },
+        "SI": {
+            "commonName": "SLOVENIA",
+            "twoLetter": "SI",
+            "numeric": "705",
+            "threeLetter": "SVN"
+        },
+        "AI": {
+            "commonName": "ANGUILLA",
+            "twoLetter": "AI",
+            "numeric": "660",
+            "threeLetter": "AIA"
+        },
+        "AQ": {
+            "commonName": "ANTARCTICA",
+            "twoLetter": "AQ",
+            "numeric": "10",
+            "threeLetter": "ATA"
+        },
+        "AN": {
+            "commonName": "NETHERLANDS ANTILLES",
+            "twoLetter": "AN",
+            "numeric": "530",
+            "threeLetter": "ANT"
+        },
+        "JO": {
+            "commonName": "JORDAN",
+            "twoLetter": "JO",
+            "numeric": "400",
+            "threeLetter": "JOR"
+        },
+        "SM": {
+            "commonName": "SAN MARINO",
+            "twoLetter": "SM",
+            "numeric": "674",
+            "threeLetter": "SMR"
+        },
+        "UA": {
+            "commonName": "UKRAINE",
+            "twoLetter": "UA",
+            "numeric": "804",
+            "threeLetter": "UKR"
+        },
+        "CU": {
+            "commonName": "CUBA",
+            "twoLetter": "CU",
+            "numeric": "192",
+            "threeLetter": "CUB"
+        },
+        "CL": {
+            "commonName": "CHILE",
+            "twoLetter": "CL",
+            "numeric": "152",
+            "threeLetter": "CHL"
+        },
+        "EH": {
+            "commonName": "WESTERN SAHARA",
+            "twoLetter": "EH",
+            "numeric": "732",
+            "threeLetter": "ESH"
+        },
+        "ML": {
+            "commonName": "MALI",
+            "twoLetter": "ML",
+            "numeric": "466",
+            "threeLetter": "MLI"
+        },
+        "KN": {
+            "commonName": "SAINT KITTS AND NEVIS",
+            "twoLetter": "KN",
+            "numeric": "659",
+            "threeLetter": "KNA"
+        },
+        "ET": {
+            "commonName": "ETHIOPIA",
+            "twoLetter": "ET",
+            "numeric": "231",
+            "threeLetter": "ETH"
+        },
+        "SC": {
+            "commonName": "SEYCHELLES",
+            "twoLetter": "SC",
+            "numeric": "690",
+            "threeLetter": "SYC"
+        },
+        "IS": {
+            "commonName": "ICELAND",
+            "twoLetter": "IS",
+            "numeric": "352",
+            "threeLetter": "ISL"
+        },
+        "MS": {
+            "commonName": "MONTSERRAT",
+            "twoLetter": "MS",
+            "numeric": "500",
+            "threeLetter": "MSR"
+        },
+        "NL": {
+            "commonName": "NETHERLANDS",
+            "twoLetter": "NL",
+            "numeric": "528",
+            "threeLetter": "NLD"
+        },
+        "HK": {
+            "commonName": "HONG KONG",
+            "twoLetter": "HK",
+            "numeric": "344",
+            "threeLetter": "HKG"
+        },
+        "EC": {
+            "commonName": "ECUADOR",
+            "twoLetter": "EC",
+            "numeric": "218",
+            "threeLetter": "ECU"
+        },
+        "MY": {
+            "commonName": "MALAYSIA",
+            "twoLetter": "MY",
+            "numeric": "458",
+            "threeLetter": "MYS"
+        },
+        "CR": {
+            "commonName": "COSTA RICA",
+            "twoLetter": "CR",
+            "numeric": "188",
+            "threeLetter": "CRI"
+        },
+        "VA": {
+            "commonName": "VATICAN",
+            "twoLetter": "VA",
+            "numeric": "336",
+            "threeLetter": "VAT"
+        },
+        "IO": {
+            "commonName": "BRITISH INDIAN OCEAN TERRITORY",
+            "twoLetter": "IO",
+            "numeric": "86",
+            "threeLetter": "IOT"
+        },
+        "RS": {
+            "commonName": "SERBIA",
+            "twoLetter": "RS",
+            "numeric": "688",
+            "threeLetter": "SRB"
+        },
+        "SD": {
+            "commonName": "SUDAN",
+            "twoLetter": "SD",
+            "numeric": "729",
+            "threeLetter": "SDN"
+        },
+        "CN": {
+            "commonName": "CHINA",
+            "twoLetter": "CN",
+            "numeric": "156",
+            "threeLetter": "CHN"
+        },
+        "BG": {
+            "commonName": "BULGARIA",
+            "twoLetter": "BG",
+            "numeric": "100",
+            "threeLetter": "BGR"
+        },
+        "MH": {
+            "commonName": "MARSHALL ISLANDS",
+            "twoLetter": "MH",
+            "states": {
+                "MH": {
+                    "state_name": "Marshall Islands"
+                }
+            },
+            "numeric": "584",
+            "threeLetter": "MHL"
+        },
+        "UY": {
+            "commonName": "URUGUAY",
+            "twoLetter": "UY",
+            "numeric": "858",
+            "threeLetter": "URY"
+        },
+        "BS": {
+            "commonName": "BAHAMAS",
+            "twoLetter": "BS",
+            "numeric": "44",
+            "threeLetter": "BHS"
+        },
+        "PY": {
+            "commonName": "PARAGUAY",
+            "twoLetter": "PY",
+            "numeric": "600",
+            "threeLetter": "PRY"
+        },
+        "MU": {
+            "commonName": "MAURITIUS",
+            "twoLetter": "MU",
+            "numeric": "480",
+            "threeLetter": "MUS"
+        },
+        "TL": {
+            "commonName": "EAST TIMOR",
+            "twoLetter": "TL",
+            "numeric": "626",
+            "threeLetter": "TLS"
+        },
+        "LI": {
+            "commonName": "LIECHTENSTEIN",
+            "twoLetter": "LI",
+            "numeric": "438",
+            "threeLetter": "LIE"
+        },
+        "CH": {
+            "commonName": "SWITZERLAND",
+            "twoLetter": "CH",
+            "numeric": "756",
+            "threeLetter": "CHE"
+        },
+        "KG": {
+            "commonName": "KYRGYZSTAN",
+            "twoLetter": "KG",
+            "numeric": "417",
+            "threeLetter": "KGZ"
+        },
+        "GH": {
+            "commonName": "GHANA",
+            "twoLetter": "GH",
+            "numeric": "288",
+            "threeLetter": "GHA"
+        },
+        "NU": {
+            "commonName": "NIUE",
+            "twoLetter": "NU",
+            "numeric": "570",
+            "threeLetter": "NIU"
+        },
+        "PE": {
+            "commonName": "PERU",
+            "twoLetter": "PE",
+            "numeric": "604",
+            "threeLetter": "PER"
+        },
+        "US": {
+            "commonName": "UNITED STATES",
+            "twoLetter": "US",
+            "states": {
+                "SC": {
+                    "state_name": "South Carolina"
+                },
+                "LA": {
+                    "state_name": "Louisiana"
+                },
+                "NC": {
+                    "state_name": "North Carolina"
+                },
+                "MS": {
+                    "state_name": "Mississippi"
+                },
+                "OK": {
+                    "state_name": "Oklahoma"
+                },
+                "NY": {
+                    "state_name": "New York"
+                },
+                "VA": {
+                    "state_name": "Virginia"
+                },
+                "HI": {
+                    "state_name": "Hawaii"
+                },
+                "PA": {
+                    "state_name": "Pennsylvania"
+                },
+                "NE": {
+                    "state_name": "Nebraska"
+                },
+                "SD": {
+                    "state_name": "South Dakota"
+                },
+                "DC": {
+                    "state_name": "District of Columbia"
+                },
+                "OH": {
+                    "state_name": "Ohio"
+                },
+                "WV": {
+                    "state_name": "West Virginia"
+                },
+                "WI": {
+                    "state_name": "Wisconsin"
+                },
+                "NM": {
+                    "state_name": "New Mexico"
+                },
+                "MO": {
+                    "state_name": "Missouri"
+                },
+                "NH": {
+                    "state_name": "New Hampshire"
+                },
+                "AZ": {
+                    "state_name": "Arizona"
+                },
+                "MA": {
+                    "state_name": "Massachusetts"
+                },
+                "MT": {
+                    "state_name": "Montana"
+                },
+                "MN": {
+                    "state_name": "Minnesota"
+                },
+                "TX": {
+                    "state_name": "Texas"
+                },
+                "ME": {
+                    "state_name": "Maine"
+                },
+                "NJ": {
+                    "state_name": "New Jersey"
+                },
+                "WY": {
+                    "state_name": "Wyoming"
+                },
+                "NV": {
+                    "state_name": "Nevada"
+                },
+                "WA": {
+                    "state_name": "Washington"
+                },
+                "OR": {
+                    "state_name": "Oregon"
+                },
+                "ID": {
+                    "state_name": "Idaho"
+                },
+                "RI": {
+                    "state_name": "Rhode Island"
+                },
+                "AL": {
+                    "state_name": "Alabama"
+                },
+                "UT": {
+                    "state_name": "Utah"
+                },
+                "TN": {
+                    "state_name": "Tennessee"
+                },
+                "KS": {
+                    "state_name": "Kansas"
+                },
+                "ND": {
+                    "state_name": "North Dakota"
+                },
+                "AA": {
+                    "state_name": "Armed Forces America"
+                },
+                "FL": {
+                    "state_name": "Florida"
+                },
+                "CT": {
+                    "state_name": "Connecticut"
+                },
+                "MD": {
+                    "state_name": "Maryland"
+                },
+                "CA": {
+                    "state_name": "California"
+                },
+                "IA": {
+                    "state_name": "Iowa"
+                },
+                "DE": {
+                    "state_name": "Delaware"
+                },
+                "CO": {
+                    "state_name": "Colorado"
+                },
+                "AP": {
+                    "state_name": "Armed Forces Pacific"
+                },
+                "MI": {
+                    "state_name": "Michigan"
+                },
+                "VT": {
+                    "state_name": "Vermont"
+                },
+                "AR": {
+                    "state_name": "Arkansas"
+                },
+                "IN": {
+                    "state_name": "Indiana"
+                },
+                "GA": {
+                    "state_name": "Georgia"
+                },
+                "AE": {
+                    "state_name": "Armed Forces Other Areas"
+                },
+                "AK": {
+                    "state_name": "Alaska"
+                },
+                "IL": {
+                    "state_name": "Illinois"
+                },
+                "KY": {
+                    "state_name": "Kentucky"
+                }
+            },
+            "numeric": "840",
+            "threeLetter": "USA"
+        },
+        "BZ": {
+            "commonName": "BELIZE",
+            "twoLetter": "BZ",
+            "numeric": "84",
+            "threeLetter": "BLZ"
+        },
+        "SL": {
+            "commonName": "SIERRA LEONE",
+            "twoLetter": "SL",
+            "numeric": "694",
+            "threeLetter": "SLE"
+        },
+        "CY": {
+            "commonName": "CYPRUS",
+            "twoLetter": "CY",
+            "numeric": "196",
+            "threeLetter": "CYP"
+        },
+        "FJ": {
+            "commonName": "FIJI",
+            "twoLetter": "FJ",
+            "numeric": "242",
+            "threeLetter": "FJI"
+        },
+        "IM": {
+            "commonName": "ISLE OF MAN",
+            "twoLetter": "IM",
+            "numeric": "833",
+            "threeLetter": "IMN"
+        },
+        "IE": {
+            "commonName": "IRELAND",
+            "twoLetter": "IE",
+            "numeric": "372",
+            "threeLetter": "IRL"
+        },
+        "TW": {
+            "commonName": "TAIWAN, PROVINCE OF CHINA",
+            "twoLetter": "TW",
+            "numeric": "158",
+            "threeLetter": "TWN"
+        },
+        "KP": {
+            "commonName": "NORTH KOREA",
+            "twoLetter": "KP",
+            "numeric": "408",
+            "threeLetter": "PRK"
+        },
+        "PF": {
+            "commonName": "FRENCH POLYNESIA",
+            "twoLetter": "PF",
+            "numeric": "258",
+            "threeLetter": "PYF"
+        },
+        "ER": {
+            "commonName": "ERITREA",
+            "twoLetter": "ER",
+            "numeric": "232",
+            "threeLetter": "ERI"
+        },
+        "IQ": {
+            "commonName": "IRAQ",
+            "twoLetter": "IQ",
+            "numeric": "368",
+            "threeLetter": "IRQ"
+        },
+        "AS": {
+            "commonName": "AMERICAN SAMOA",
+            "twoLetter": "AS",
+            "states": {
+                "AS": {
+                    "state_name": "American Samoa"
+                }
+            },
+            "numeric": "16",
+            "threeLetter": "ASM"
+        },
+        "MW": {
+            "commonName": "MALAWI",
+            "twoLetter": "MW",
+            "numeric": "454",
+            "threeLetter": "MWI"
+        },
+        "TZ": {
+            "commonName": "TANZANIA",
+            "twoLetter": "TZ",
+            "numeric": "834",
+            "threeLetter": "TZA"
+        },
+        "LY": {
+            "commonName": "LIBYA",
+            "twoLetter": "LY",
+            "numeric": "434",
+            "threeLetter": "LBY"
+        },
+        "GT": {
+            "commonName": "GUATEMALA",
+            "twoLetter": "GT",
+            "numeric": "320",
+            "threeLetter": "GTM"
+        },
+        "GY": {
+            "commonName": "GUYANA",
+            "twoLetter": "GY",
+            "numeric": "328",
+            "threeLetter": "GUY"
+        },
+        "BM": {
+            "commonName": "BERMUDA",
+            "twoLetter": "BM",
+            "numeric": "60",
+            "threeLetter": "BMU"
+        },
+        "GQ": {
+            "commonName": "EQUATORIAL GUINEA",
+            "twoLetter": "GQ",
+            "numeric": "226",
+            "threeLetter": "GNQ"
+        },
+        "PK": {
+            "commonName": "PAKISTAN",
+            "twoLetter": "PK",
+            "numeric": "586",
+            "threeLetter": "PAK"
+        },
+        "BV": {
+            "commonName": "BOUVET ISLAND",
+            "twoLetter": "BV",
+            "numeric": "74",
+            "threeLetter": "BVT"
+        },
+        "LT": {
+            "commonName": "LITHUANIA",
+            "twoLetter": "LT",
+            "numeric": "440",
+            "threeLetter": "LTU"
+        },
+        "PM": {
+            "commonName": "SAINT PIERRE AND MIQUELON",
+            "twoLetter": "PM",
+            "numeric": "666",
+            "threeLetter": "SPM"
+        },
+        "SG": {
+            "commonName": "SINGAPORE",
+            "twoLetter": "SG",
+            "numeric": "702",
+            "threeLetter": "SGP"
+        },
+        "TT": {
+            "commonName": "TRINIDAD AND TOBAGO",
+            "twoLetter": "TT",
+            "numeric": "780",
+            "threeLetter": "TTO"
+        },
+        "NF": {
+            "commonName": "NORFOLK ISLAND",
+            "twoLetter": "NF",
+            "numeric": "574",
+            "threeLetter": "NFK"
+        },
+        "TD": {
+            "commonName": "CHAD",
+            "twoLetter": "TD",
+            "numeric": "148",
+            "threeLetter": "TCD"
+        },
+        "SO": {
+            "commonName": "SOMALIA",
+            "twoLetter": "SO",
+            "numeric": "706",
+            "threeLetter": "SOM"
+        },
+        "SK": {
+            "commonName": "SLOVAKIA",
+            "twoLetter": "SK",
+            "numeric": "703",
+            "threeLetter": "SVK"
+        },
+        "SY": {
+            "commonName": "SYRIAN ARAB REPUBLIC",
+            "twoLetter": "SY",
+            "numeric": "760",
+            "threeLetter": "SYR"
+        },
+        "HM": {
+            "commonName": "HEARD ISLAND AND MCDONALD ISLANDS",
+            "twoLetter": "HM",
+            "numeric": "334",
+            "threeLetter": "HMD"
+        },
+        "BD": {
+            "commonName": "BANGLADESH",
+            "twoLetter": "BD",
+            "numeric": "50",
+            "threeLetter": "BGD"
+        }
+    },
+    "pd_transaction_payment_type": null,
+    "enabled": {
+        "purchasecard": {
+            "pt_purchase_order_number": "1"
+        },
+        "seqr": {
+            "pt_card_security_code": "0",
+            "pt_card_number": "0",
+            "billingInformationSection": "1",
+            "pt_payment_name": "1",
+            "pt_card_expiration_month": "0",
+            "pt_card_expiration_year": "0"
+        },
+        "swipe": {
+            "pt_billing_address_2": "0",
+            "pt_billing_country": "0",
+            "pt_billing_province": "0",
+            "pt_billing_city": "0",
+            "pt_billing_name": "0",
+            "billingInformationSection": "0",
+            "pt_billing_state": "0",
+            "pt_billing_postal_code": "0",
+            "pt_billing_email_address": "0",
+            "pt_billing_phone_number": "0",
+            "pt_billing_address_1": "0"
+        },
+        "ach": {
+            "pt_ach_account_type": "1",
+            "pt_payment_last_name": "1",
+            "pt_card_expiration_month": "0",
+            "pt_ach_routing_number": "1",
+            "pt_card_expiration_year": "0",
+            "pt_ach_account_class": "1",
+            "pt_card_number": "0",
+            "pt_card_security_code": "0",
+            "pt_ach_account_number": "1",
+            "pt_ach_sec_code": "1",
+            "pt_payment_name": "0",
+            "pt_payment_first_name": "1"
+        },
+        "all": {
+            "pt_billing_company": "1",
+            "pt_card_expiration_month": "1",
+            "pt_ach_routing_number": "0",
+            "pt_account_code_1": "1",
+            "pt_billing_name": "1",
+            "pt_card_expiration": "0",
+            "billingInformationSection": "1",
+            "pt_billing_last_name": "0",
+            "pt_transaction_amount": "1",
+            "pt_account_code_3": "0",
+            "pt_ach_sec_code": "0",
+            "pt_billing_address_1": "1",
+            "pt_account_code_2": "1",
+            "pt_billing_first_name": "0",
+            "pt_payment_last_name": "0",
+            "pt_billing_city": "1",
+            "pt_ach_account_class": "0",
+            "pt_ach_account_number": "0",
+            "pt_authorization_code": "0",
+            "pt_shipping_first_name": "0",
+            "pt_billing_state": "1",
+            "pt_payment_first_name": "0",
+            "pt_payment_name": "1",
+            "pt_billing_email_address": "1",
+            "pt_purchase_order_number": "0",
+            "pt_ach_account_type": "0",
+            "pt_ach_acquisition_method": "0",
+            "pt_tax_amount": "0",
+            "pt_card_expiration_year": "1",
+            "pt_card_number": "1",
+            "pt_card_security_code": "1",
+            "pt_customer_username": "0",
+            "pt_customer_comments": "1",
+            "pt_shipping_last_name": "0",
+            "shippingInformationSection": "0",
+            "pt_billing_postal_code": "1",
+            "pt_order_classifier": "0"
+        }
+    }
+}
